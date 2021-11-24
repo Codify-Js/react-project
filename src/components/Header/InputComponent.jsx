@@ -3,12 +3,10 @@ import React from 'react'
 import './InputComponent.css'
 
 const InputComponent = (props) => {
-  const { onChange, myProp, hide } = props
-  
+
+  const { value, onChange } = props
   return (
-    !hide && (
-      <input type="text" value={myProp} placeholder={'Search'} onChange={onChange}/>
-    )
+    <input type="text" value={value} placeholder={'Search'} onChange={onChange}/>   
   )
 }
 
