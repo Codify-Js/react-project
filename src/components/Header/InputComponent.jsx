@@ -1,12 +1,11 @@
 import React from 'react'
-
 import './InputComponent.css'
 
 const InputComponent = (props) => {
 
   const { value, onChange } = props
   return (
-    <input type="text" value={value} placeholder={'Search'} onChange={onChange}/>   
+    <input class="input" type="text" value={value} placeholder={'Search'} onChange={onChange}/>   
   )
 }
 

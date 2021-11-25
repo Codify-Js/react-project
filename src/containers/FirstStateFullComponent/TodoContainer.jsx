@@ -1,5 +1,6 @@
 import React from 'react'
 import InputComponent from '../../components/Header/InputComponent';
+import './style.css'
 
 export default class TodoContainer extends React.Component {
   constructor(props) {
@@ -43,7 +44,7 @@ export default class TodoContainer extends React.Component {
       <div>
       
         <InputComponent value={this.state.inputValue} onChange={this.handleInputChange} />
-        <button disabled={!this.state.inputValue} onClick={this.handleAdd}>Add</button>
+        <button class="button" disabled={!this.state.inputValue} onClick={this.handleAdd}>Add</button>
         <hr/>
         <b>Todo List</b>
         {todoList.map((item, index) => itemElem(item, index))}
