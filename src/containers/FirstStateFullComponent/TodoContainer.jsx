@@ -19,22 +19,17 @@ export default class TodoContainer extends React.Component {
     this.setState({inputValue: event.target.value});
   }
 
-  calc(e) {
-    console.log('RUN', e);
-  }
-
   handleAdd() {
     if (this.state.inputValue === '') {
       return;
     }
-    this.setState({
-      list: [...this.state.list, this.state.inputValue],
+    this.setState((state) => ({
+      list: [...state.list, state.inputValue],
       inputValue: ''
-    });
+    }));
   }
 
   render() {
-    console.log('thisState', this.state);
     const todoList = this.state.list;
 
     const itemElem = (item, index) => (
@@ -44,16 +39,11 @@ export default class TodoContainer extends React.Component {
       </div>
     )
 
-    const handleClick = (event) => {
-      this.setState({inputValue: event.target.value});
-    }
-
     return (
       <div>
       
-        <InputComponent value={this.state.inputValue} onChange={handleClick} />
+        <InputComponent value={this.state.inputValue} onChange={this.handleInputChange} />
         <button disabled={!this.state.inputValue} onClick={this.handleAdd}>Add</button>
-        <button onClick={(e) => this.calc(e)}>A+B</button>
         <hr/>
         <b>Todo List</b>
         {todoList.map((item, index) => itemElem(item, index))}
