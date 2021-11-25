@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Estonia&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300&display=swap');
+.btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: grey;
+    border: 2 px solid black;
+
+}
+.b {
+    position: absolute;
+    top: 10px;
+    align-content: center;
+    left: 20px;
+    opacity: 40%;
+    color: black;
+    font-size: 100px;
+}
