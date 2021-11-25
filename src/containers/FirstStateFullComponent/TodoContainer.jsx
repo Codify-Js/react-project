@@ -33,17 +33,19 @@ export default class TodoContainer extends React.Component {
     const todoList = this.state.list;
 
     const itemElem = (item, index) => (
-      <div key={index}>
-        <span>{index + 1}{' '}</span>
-        <span>{item}</span>
+      <div key={index} className="list-block">
+        <span className="list-number">{index + 1}{'.'+'  '}</span>
+        <span className="text-list">{item}</span>
+        <button className="done-btn" onClick={this.handleDone}>Done</button>
       </div>
+      
     )
 
     return (
-      <div>
+      <div className="main-block">
       
         <InputComponent value={this.state.inputValue} onChange={this.handleInputChange} />
-        <button disabled={!this.state.inputValue} onClick={this.handleAdd}>Add</button>
+        <button disabled={!this.state.inputValue} onClick={this.handleAdd} className="btn">Add</button>
         <hr/>
         <b>Todo List</b>
         {todoList.map((item, index) => itemElem(item, index))}
