@@ -8,7 +8,7 @@ function App() {
   return (
     <div className={containerClass}>
       <header className="App-header">
-        <TodoContainer parentProps={false} />
+        <TodoContainer class="background" parentProps={false} />
       </header>
     </div>
   );
