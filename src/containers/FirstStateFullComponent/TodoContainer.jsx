@@ -44,7 +44,7 @@ export default class TodoContainer extends React.Component {
       <div>
       
         <InputComponent value={this.state.inputValue} onChange={this.handleInputChange} />
-        <b className="b">Todo List</b>
+        <b className="b">ToDo List</b>
         <button disabled={!this.state.inputValue} onClick={this.handleAdd} className="btn">Add</button>
         <hr/>
         {todoList.map((item, index) => itemElem(item, index))}
