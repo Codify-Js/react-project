@@ -1,5 +1,7 @@
 import React from 'react'
 import InputComponent from '../../components/Header/InputComponent';
+import './TodoContainer.css'
+
 
 export default class TodoContainer extends React.Component {
   constructor(props) {
@@ -33,12 +35,12 @@ export default class TodoContainer extends React.Component {
     const todoList = this.state.list;
 
     const itemElem = (item, index) => (
-      <div key={index} className="list-block">
+      <div className='list' key={index} className="list-block">
         <span className="list-number">{index + 1}{'.'+'  '}</span>
         <span className="text-list">{item}</span>
         <button className="done-btn" onClick={this.handleDone}>Done</button>
       </div>
-      
+
     )
 
     return (
