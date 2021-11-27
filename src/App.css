@@ -15,7 +15,7 @@
 }
 
 .App-header {
-  background-color: rgb(218, 176, 218);
+  background-color:#5F9EA0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -36,4 +36,50 @@
   to {
     transform: rotate(360deg);
   }
+}
+.list-block{
+  border: 3px solid black;
+  padding: 10px 30px;
+  margin-top: 10px;
+  position: relative;
+}
+.btn{
+  padding: 18px 25px;
+  border-radius: 10px;
+  background: #DAA520;
+  color: #fff;
+  font-size: 17px;
+}
+.main-block{
+  position: absolute;
+  top: 20px;
+  left: 100px;
+}
+.list-number{
+  /* text-align: left; */
+  font-weight: 700;
+  color: black;
+  list-style: none;
+  position: absolute;
+  left: 30px;
+
+
+}
+.text-list{
+  text-align: center;
+  font-size: 24px;
+}
+.done-btn{
+  position: absolute;
+  top: -2px;
+  right: -100px;
+  padding: 15px 25px;
+  font-size: 17px;
+  border-radius: 10px;
+  border: 2px solid #DAA520;
+  background:#5F9EA0 ;
+  color: #fff;
+}
+.done-btn:hover{
+  background:#DAA520
 }
