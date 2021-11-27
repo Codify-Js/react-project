@@ -1,6 +1,7 @@
-// import logo from './logo.svg';
+
 import './App.css';
-import TodoContainer from './containers/FirstStateFullComponent/TodoContainer';
+// import TodoContainer from './containers/FirstStateFullComponent/TodoContainer';
+import StudentsContainer from './containers/FirstStateFullComponent/StudentsContainer';
 
 function App() {
   const containerClass = "App";
@@ -8,7 +9,7 @@ function App() {
   return (
     <div className={containerClass}>
       <header className="App-header">
-        <TodoContainer class="background" parentProps={false} />
+        <StudentsContainer parentProps={false} />
       </header>
     </div>
   );

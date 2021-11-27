@@ -4,9 +4,9 @@ import './InputComponent.css'
 
 const InputComponent = (props) => {
 
-  const { value, onChange } = props
+  const { value, onChange, placeholderText } = props
   return (
-    <input type="text" value={value} placeholder={'Search'} onChange={onChange}/>   
+    <input type="text" placeholder={placeholderText} value={value} onChange={onChange}/>   
   )
 }
 

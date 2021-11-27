@@ -15,7 +15,8 @@
 }
 
 .App-header {
-  background-color: rgb(218, 176, 218);
+  background: url('./hogwarts.jpeg');
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
