@@ -1,4 +1,5 @@
 import React from 'react'
+import AddButton from '../../components/AddButton';
 import InputComponent from '../../components/Header/InputComponent';
 import './TodoContainer.css'
 
@@ -40,14 +41,16 @@ export default class TodoContainer extends React.Component {
         <span>{item}</span>
       </div>
     )
-    
+
     return (
       <div>
-      
-        <InputComponent value={this.state.inputValue} onChange={this.handleInputChange} />
-        <button onClick={this.handleAdd} className='add'>Add</button>
-        <hr/>
-        <b>Todo List</b>
+      <div class="header"><b>Todo List</b></div>
+
+      <InputComponent value={this.state.inputValue} onChange={this.handleInputChange} />
+        {/* <button onClick={this.handleAdd} className='add'>Add</button>
+        <hr/> */}
+      <AddButton text="Add" onClick={this.handleAdd} />
+
         {todoList.map((item, index) => itemElem(item, index))}
       </div>
     )
