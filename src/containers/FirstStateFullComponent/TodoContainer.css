@@ -1,12 +1,6 @@
-.add{
-    border: 2px solid#38A3A5;
-    border-radius: 15%;
-    height: 60px;
-    width: 80px;
-    background-color: white;
-    
-}
-.list{
-    text-align: left;
-    color: #38A3A5;
+.header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 50px;
 }
