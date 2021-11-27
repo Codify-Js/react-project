@@ -1,6 +1,6 @@
 import React from 'react'
-import AddButton from '../../components/AddButton';
-import InputComponent from '../../components/Header/InputComponent';
+import AddButton from '../../components/Button/AddButton';
+import InputComponent from '../../components/Input/InputComponent';
 import './TodoContainer.css'
 
 export default class TodoContainer extends React.Component {
