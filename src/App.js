@@ -1,4 +1,4 @@
-// import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import TodoContainer from './containers/FirstStateFullComponent/TodoContainer';
 
@@ -8,8 +8,9 @@ function App() {
   return (
     <div className={containerClass}>
       <header className="App-header">
-        <TodoContainer class="background" parentProps={false} />
+        
       </header>
+      <TodoContainer />
     </div>
   );
 }

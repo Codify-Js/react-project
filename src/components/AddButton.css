@@ -1,6 +1,7 @@
-.add-button{
-    width: 60px;
-    height: 60px;
-    border-radius: 40%;
-    margin-left: 5px;
+.add-button {
+    padding: 18px 25px;
+    border-radius: 10px;
+    background: #DAA520;
+    color: #fff;
+    font-size: 17px;
 }

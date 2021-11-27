@@ -1,6 +1,25 @@
-.header{
+.container {
+    background: #5F9EA0;
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+}
+.container-header {
+    color: #025f63;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.list-block {
+    border: 1px solid white;
+    padding: 10px 30px;
+
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    font-size: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text {
+    text-align: center;
+    font-size: 24px;
 }
