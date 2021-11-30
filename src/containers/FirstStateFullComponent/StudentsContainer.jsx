@@ -29,16 +29,23 @@ export default class StudentContainer extends React.Component {
     }
 
     handleAdd() {
-        if (this.state.inputNameValue === '' && this.state.inputSurnameValue === '') {
-          alert("Type in student's name and surname");
-          return;
+        if (this.state.inputNameValue === '') {
+          alert("Required field is missing");
+        } else if (this.state.inputSurnameValue === '') {
+        alert("Required field is missing");
         }
         this.setState((state) => ({
-          
+          const newStudent = {
+            id: state.list.length + 1,
+            fullName: state.inputNameValue + state.inputSurnameValue
+          }
+
+          return ({
           inputNameValue: '',
           inputSurnameValue: '',
-          list: [...state.list, state.fullName],
-        }));
+          list: [...state.list, newStudent],
+        })
+        })
       }
 
       render (){
@@ -48,7 +55,7 @@ export default class StudentContainer extends React.Component {
           // const studentName = this.state.inputNameValue
           // const studentSurname = this.state.inputSurnameValue
 
-          const student = (index, studentName, studentSurname) => {
+          const newStudent = (index, studentName, studentSurname) => {
             <div key={index}>
             <div>{ studentName }</div>
             <span>{ studentSurname }</span>
@@ -68,7 +75,7 @@ export default class StudentContainer extends React.Component {
           </div>
           <div>
             <ul>
-              <li> {studentList.map((index, studentName, studentSurname) => student (index,studentName, studentSurname))}</li>
+              // <li> {studentList.map((index, studentName, studentSurname) => student (index,studentName, studentSurname))}</li>
             </ul>
           </div>
          
