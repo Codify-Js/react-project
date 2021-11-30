@@ -5,43 +5,43 @@ export const todolist = () => {
       id: 1,
       title: 'Mock Data',
       completed: false,
-      description: 'some text',
+      description: 'Some description',
       date: '01/01/2021'
     },
     {
       id: 2,
-      title: 'Check list',
+      title: 'Mock Data',
       completed: false,
-      description: 'another text',
-      date: '01/09/2021'
+      description: 'Some another description',
+      date: '01/02/2021'
     },
     {
       id: 3,
       title: 'Remove selected',
       completed: false,
-      description: 'some odd text',
-      date: '26/07/2021'
+      description: 'Remove descirption',
+      date: '03/03/2021'
     },
     {
       id: 4,
       title: 'Search in list',
       completed: false,
-      description: 'odd text',
-      date: '18/01/2021'
+      description: 'Remove descirption',
+      date: '03/03/2021'
     },
     {
       id: 5,
       title: 'Count All, completed, uncompleted',
       completed: false,
-      description: 'random text',
-      date: '20/11/2021'
+      description: 'some super text',
+      date: '12/04/2021'
     },
     {
       id: 6,
       title: 'Save to localStorage *',
       completed: false,
-      description: 'some random text',
-      date: '02/01/2021'
+      description: 'React app',
+      date: '31/12/2021'
     }
   ]
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 
 import Button from '../../components/Button/Button';
 import InputComponent from '../../components/Input/InputComponent';
@@ -88,13 +88,14 @@ export default class TodoContainer extends React.Component {
 
     const checkedList = this.state.checkedList;
 
-
     const itemElem = (item, index) => {
       return (
         <div key={item.id} className="list-block">
           <div className="list-block_text">
             <CheckBoxComponent handleCheck={(e) => this.handleCheck(e, item)} />
-            <span className="text">{`${item.id}. ${item.title}`}</span>
+            <Link to={`/todo-list/${item.id}`}>
+              <span className="text">{`${item.id}. ${item.title}`}</span>
+            </Link>
           </div>
           <div className="list-block_actions">
             <Button text="Done" onClick={this.handleDone}/>
@@ -109,8 +110,11 @@ export default class TodoContainer extends React.Component {
           <span>All: {todoList.length}{' '}</span>
           <span>Selected: {checkedList.length}{' '}</span>
         </div>
-        <div>
-          <InputComponent placeholder={'Search'} value={this.state.search} onChange={this.handleSearchChange}/>
+        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+          <div>
+            <InputComponent placeholder={'Search'} value={this.state.search} onChange={this.handleSearchChange}/>
+          </div>
+          <div style={{marginRight: '40px'}}><Outlet /></div>
         </div>
         <InputComponent placeholder={'Title'} value={this.state.inputValue} onChange={this.handleInputChange}/>
         <Button text="Add" onClick={this.handleAdd}/>
