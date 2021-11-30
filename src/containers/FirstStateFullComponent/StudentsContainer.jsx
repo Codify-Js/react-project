@@ -5,6 +5,7 @@ import InputNameComponent from '../../components/Header/InputNameComponent';
 import InputSurnameComponent from '../../components/Header/InputSurnameComponent';
 import mockStudentList from '../../mock/mockStudentList';
 
+
 export default class StudentContainer extends React.Component {
     constructor(props){
         super(props);
@@ -13,11 +14,14 @@ export default class StudentContainer extends React.Component {
             inputNameValue:'',
             inputSurnameValue:'',
             studentFullName:'',
-            list: mockStudentList() || []
+            studentLogo:'',
+            list: mockStudentList() || [],
+            cleanedList: []
         };
         this.handleInputNameChange = this.handleInputNameChange.bind(this)
         this.handleInputSurnameChange = this.handleInputSurnameChange.bind(this)
         this.handleAdd = this.handleAdd.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
     }
     
     handleInputNameChange(event){
@@ -37,7 +41,8 @@ export default class StudentContainer extends React.Component {
         this.setState((state) => {
         const newStudent = {
           id: state.list.length + 1,
-          fullName: `${state.inputNameValue} ${state.inputSurnameValue}`
+          fullName: `${state.inputNameValue} ${state.inputSurnameValue}`,
+          logo: `${state.inputNameValue[0]}${state.inputSurnameValue[0]}`
         }
 
         return ({
@@ -49,12 +54,32 @@ export default class StudentContainer extends React.Component {
       }
     }
 
+    handleDelete (event, item) {
+      const itemToBeDeleted = this.state.list.find(listItem => listItem.id === item.id)
+      if(event.target){
+        this.setState((state)=> {
+          const listToBeCleaned = [...state.list]
+          listToBeCleaned.splice(listToBeCleaned.indexOf(itemToBeDeleted),1)
+        
+          return ({
+            list: listToBeCleaned
+          })
+        
+        })
+      
+    }
+  }
+
       render () {
 
           const student = (index, item) => {
             return (
-            <div key={index}>
-            <span>{ item.fullName } </span>
+            <div className="listStudent" key={index}>
+              <div className="logo-name">
+                  <div className="logo">{ item.logo }</div>
+                  <span className="fullName">{ item.fullName }</span>
+              </div>
+                <Button className="button-delete" text="DELETE" onClick={this.handleDelete}></Button>
             </div>
             )
           }
@@ -62,21 +87,21 @@ export default class StudentContainer extends React.Component {
 
       return (
         <div className="student-container">
-          <div className="header"><h1>Hogwarts School Students List</h1></div>
+          <div className="header">
+            <h1>Hogwarts School Students List</h1>
+          </div>
           <hr />
-          <div className="add-new-student">
-            <div className="input-info">
-            <InputNameComponent className="input-name" value={this.inputNameValue} onChange={this.handleInputNameChange} />
-            <InputSurnameComponent className="input-surname" value={this.inputSurnameValue} onChange={this.handleInputSurnameChange} />
-            </div>
-            <Button className="button-add" text="ADD" onClick={this.handleAdd}></Button>
+          <div className="input-info">
+              <InputNameComponent className="input-name" placeholder="First Name" value={this.inputNameValue} onChange={this.handleInputNameChange} />
+              <InputSurnameComponent className="input-surname" placeholder="Last Name" value={this.inputSurnameValue} onChange={this.handleInputSurnameChange} />
+              <Button className="button-add" text="ADD" onClick={this.handleAdd}></Button>
           </div>
-          <div>
-              {this.state.list.map((studentFullName, index) => student (index, studentFullName))}
+          <div className="listOfStudents">
+              {this.state.list.map((item, index) => student (index, item))}
+
           </div>
-         
-        </div>
-) 
+         </div>
+      ) 
       }
     }
 
