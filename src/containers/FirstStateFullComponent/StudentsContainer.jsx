@@ -54,20 +54,17 @@ export default class StudentContainer extends React.Component {
       }
     }
 
-    handleDelete (event, item) {
-      const itemToBeDeleted = this.state.list.find(listItem => listItem.id === item.id)
-      if(event.target){
-        this.setState((state)=> {
-          const listToBeCleaned = [...state.list]
-          listToBeCleaned.splice(listToBeCleaned.indexOf(itemToBeDeleted),1)
-        
-          return ({
-            list: listToBeCleaned
-          })
-        
+    handleDelete (event) {
+      const index = parseInt(event.currentTarget.parentElement.id)
+      this.setState((state)=> {
+        const listToBeCleaned = [...state.list]
+        listToBeCleaned.splice(index,1)
+      
+        return ({
+          list: listToBeCleaned
         })
       
-    }
+      })
   }
 
       render () {
@@ -79,7 +76,7 @@ export default class StudentContainer extends React.Component {
                   <div className="logo">{ item.logo }</div>
                   <span className="fullName">{ item.fullName }</span>
               </div>
-                <Button className="button-delete" text="DELETE" onClick={this.handleDelete}></Button>
+                <Button className="button-delete" text="Remove" onClick={this.handleDelete}></Button>
             </div>
             )
           }
@@ -94,7 +91,7 @@ export default class StudentContainer extends React.Component {
           <div className="input-info">
               <InputNameComponent className="input-name" placeholder="First Name" value={this.inputNameValue} onChange={this.handleInputNameChange} />
               <InputSurnameComponent className="input-surname" placeholder="Last Name" value={this.inputSurnameValue} onChange={this.handleInputSurnameChange} />
-              <Button className="button-add" text="ADD" onClick={this.handleAdd}></Button>
+              <Button className="button-add" text="Add" onClick={this.handleAdd}></Button>
           </div>
           <div className="listOfStudents">
               {this.state.list.map((item, index) => student (index, item))}
