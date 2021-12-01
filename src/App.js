@@ -12,7 +12,7 @@ function App() {
         <StudentsContainer parentProps={false} />
       </header>
     </div>
-  );
+  )
 }
 
 export default App;
