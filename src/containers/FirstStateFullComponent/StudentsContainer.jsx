@@ -55,9 +55,10 @@ export default class StudentContainer extends React.Component {
     }
 
     handleDelete (event) {
-      const index = parseInt(event.currentTarget.parentElement.id)
-      this.setState((state)=> {
-        const listToBeCleaned = [...state.list]
+      const index = this.state.list
+      console.log(index)
+      this.setState(()=> {
+        const listToBeCleaned = [...this.state.list]
         listToBeCleaned.splice(index,1)
       
         return ({
