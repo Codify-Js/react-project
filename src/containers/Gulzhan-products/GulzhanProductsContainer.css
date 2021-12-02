@@ -1,0 +1,16 @@
+.products-header{
+    font-size: 30px;
+    text-align: center;
+    color:burlywood;
+}
+
+.products-counter-btn{
+    border: none;
+    background-color:orange;
+    width: 150px;
+    height: 50px;
+}
+
+.product{
+    color:orangered;
+}
