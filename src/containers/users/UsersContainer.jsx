@@ -4,6 +4,7 @@ const UsersContainer = () => {
     <>
       <h1>Users page</h1>
       <div>Some details</div>
+      
     </>
   )
 }
