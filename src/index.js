@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TodoContainer from './containers/TodoList/TodoContainer';
 import TodoItemComponent from './containers/TodoList/TodoItemComponent';
-
+import ZamirPostsContainer from './containers/ZamirPosts/ZamirPosts'
 import UsersContainer from './containers/Users/UsersContainer';
 
 import App from './App';
@@ -18,6 +18,7 @@ ReactDOM.render(
         </Route>
         
         <Route path="users" element={<UsersContainer/>} />
+          <Route path="zamir-posts" element={<ZamirPostsContainer/>} />
         <Route path="*" element={<div>NOT FOUND</div>  } />
       </Route>
     </Routes>
