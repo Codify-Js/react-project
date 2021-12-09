@@ -11,6 +11,7 @@ import './TodoContainer.css'
 
 export default class TodoContainer extends React.Component {
   constructor(props) {
+    console.log('CONSTUCTOR');
     super(props);
 
     // default state values
@@ -78,6 +79,7 @@ export default class TodoContainer extends React.Component {
   }
 
   render() {
+    console.log('RENDER');
     const search = this.state.search;
     
     const todoList = this.state.list.filter(item => {

@@ -8,7 +8,6 @@ function App() {
   return (
     <div className={containerClass}>
       <header className="App-header">
-
         <nav
           style={{
             borderBottom: "solid 1px",
