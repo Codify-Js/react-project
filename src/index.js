@@ -5,6 +5,8 @@ import TodoContainer from './containers/TodoList/TodoContainer';
 import TodoItemComponent from './containers/TodoList/TodoItemComponent';
 
 import UsersContainer from './containers/Users/UsersContainer';
+import GulzhanPostsContainer from './containers/GulzhanPosts/GulzhanPostsContainer';
+
 
 import App from './App';
 import './index.css';
@@ -19,6 +21,7 @@ ReactDOM.render(
         
         <Route path="users" element={<UsersContainer/>} />
         <Route path="*" element={<div>NOT FOUND</div>  } />
+        <Route path="gulzhan-posts" element={<GulzhanPostsContainer/>} />
       </Route>
     </Routes>
   </BrowserRouter>,

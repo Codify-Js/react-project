@@ -15,7 +15,8 @@ function App() {
           }}
         >
           <Link to="/todo-list">Todo List</Link>|{" "}
-          <Link to="/users">Users</Link> 
+          <Link to="/users">Users</Link> |{" "}
+          <Link to="/gulzhan-posts">Gulzhan Posts</Link>
         </nav>
       </header>
       <Outlet />
