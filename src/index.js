@@ -2,12 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import TodoContainer from './containers/TodoList/TodoContainer';
+import UsersContainer from './containers/UsersContainer';
 import reportWebVitals from './reportWebVitals';
+import InfoComponent from './containers/infoComponent';
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />}>
+      <Route path="todo-list" element={<TodoContainer/> } />
+      <Route path="users" element={<UsersContainer/>} />
+      <Route path="info" element={<InfoComponent/>}/>
+      </Route>
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

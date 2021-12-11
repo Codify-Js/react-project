@@ -4,22 +4,30 @@ export const todolist = () => {
     {
       id: 1,
       title: 'Mock Data',
-      completed: false
+      completed: false,
+      description: 'Some description' ,
+      date: '01/01/2021'
     },
     {
       id: 2,
       title: 'Check list',
-      completed: false
+      completed: false,
+      description: 'Some another description' ,
+      date: '01/01/2021'
     },
     {
       id: 3,
       title: 'Remove selected',
-      completed: false
+      completed: false,
+      description: 'Remove description' ,
+      date: '03/03/2021'
     },
     {
       id: 4,
       title: 'Search in list',
-      completed: false
+      completed: false,
+      description: 'Remove description' ,
+      date: '01/01/2021'
     },
     {
       id: 5,
