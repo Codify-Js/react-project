@@ -13,7 +13,8 @@ function App() {
       
       
           <Link to="/todo-list">Todo List</Link>|{" "}
-          <Link to="/users">Users</Link> 
+          <Link to="/users">Users</Link>|{" "} 
+          <Link to="/aijposts">Aij Posts</Link>
     
       <Outlet />
     </div>

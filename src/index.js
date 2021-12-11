@@ -5,7 +5,7 @@ import TodoContainer from './containers/TodoList/TodoContainer';
 import TodoItemComponent from './containers/TodoList/TodoItemComponent';
 
 import UsersContainer from './containers/Users/UsersContainer';
-import Navbar from './components/Navbar/Navbar';
+import AijPostsContainer from './containers/AijPosts/AijPosts';
 
 import App from './App';
 import './index.css';
@@ -19,6 +19,7 @@ ReactDOM.render(
         </Route>
         
         <Route path="users" element={<UsersContainer/>} />
+        <Route path="aijposts" element={<AijPostsContainer/>} />
         <Route path="*" element={<div>NOT FOUND</div>  } />
       </Route>
     </Routes>
