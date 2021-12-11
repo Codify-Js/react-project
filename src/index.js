@@ -5,6 +5,7 @@ import TodoContainer from './containers/TodoList/TodoContainer';
 import TodoItemComponent from './containers/TodoList/TodoItemComponent';
 
 import UsersContainer from './containers/Users/UsersContainer';
+import Navbar from './components/Navbar/Navbar';
 
 import App from './App';
 import './index.css';
