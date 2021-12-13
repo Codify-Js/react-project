@@ -9,7 +9,8 @@ export default class MansurPostsContainer extends React.Component {
 
     this.state = {
       list: [],
-      post: null
+      post: null,
+      postId: null
     };
 
     this.handlePostClick = this.handlePostClick.bind(this);
@@ -28,18 +29,21 @@ export default class MansurPostsContainer extends React.Component {
     
   }
 
-  componentDidUpdate(){
-    console.log('DId updaate')
-  }
-
-  handlePostClick(id) {
-     axios.get(`${API_URL}/posts/${id}`)
-      .then((response) => {
-        console.log(response);
-        this.setState({
+  componentDidUpdate(prevProps, prevState){
+    if (this.state.postId === prevState.postId) return;
+    
+    if (this.state.postId) {
+      axios.get(`${API_URL}/posts/${this.state.postId}`)
+        .then((response) => {
+          this.setState({
           post: response.data
         })
       })
+    }
+  }
+
+  handlePostClick(id) {
+     this.setState({postId: id})
   }
 
   render() {
@@ -57,7 +61,7 @@ export default class MansurPostsContainer extends React.Component {
         <div>
           {this.state.list.map((post, index) => { 
             return (
-              <div onClick={() => this.handlePostClick(post.id)} key={post.id}>{post.id} | {post.title}</div>
+              <div key={index} onClick={() => this.handlePostClick(post.id)}>{post.id} | {post.title}</div>
             )
           })}
         </div>
