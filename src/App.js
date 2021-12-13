@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Outlet } from "react-router-dom";
 import './App.css';
 
+
 function App() {
   const containerClass = "App";
 
@@ -19,11 +20,12 @@ function App() {
           <Link to="/mansur-posts">Mansur Posts</Link>|{" "}
           <Link to="/zamir-posts">Zamir Posts</Link>|{" "}
           <Link to="/gulzhan-posts">Gulzhan Posts</Link>|{" "}
+          <Link to="/AisuluuUsers">AisuluuUsers</Link>|{" "}
         </nav>
       </header>
       <Outlet />
     </div>
-  );
+  )
 }
 
 export default App;

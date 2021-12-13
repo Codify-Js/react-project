@@ -10,6 +10,7 @@ import MansurPostsContainer from './containers/MansurPosts/MansurPosts';
 
 import App from './App';
 import './index.css';
+import AisuluuUsers from './containers/AisuluuUsers/AisuluuUsers'
 
 ReactDOM.render(
   <BrowserRouter>
@@ -23,6 +24,7 @@ ReactDOM.render(
         <Route path="mansur-posts" element={<MansurPostsContainer/>} />
         <Route path="zamir-posts" element={<ZamirPostsContainer/>} />
         <Route path="gulzhan-posts" element={<GulzhanPostsContainer/>} />
+        <Route path="AisuluuUsers" element={<AisuluuUsers/>} />
 
         <Route path="*" element={<div>NOT FOUND</div>  } />
       </Route>
