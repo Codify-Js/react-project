@@ -1,31 +1,26 @@
-import React from 'react'
-import { MenuItems} from "./MenuItems"
-import './Navbar.css'
-
+import React from "react";
+import { Link } from "react-router-dom"
+import { MenuItems } from "./MenuItems";
+import "./Navbar.css";
 
 class Navbar extends React.Component {
-    render() {
-        return (
-            <nav className="NavbarItems">
-                <h1 className="navbar-logo">Logo</h1>
-            <div className="menu-icon">
-            </div>
-            <ul className="nav-menu">
-                    {MenuItems.map((item, index) => {
-                            return (
-                                <li className="nav-links" key={index}>
-                                        <a className={item.cName} href={item.url}>
-                                            {item.title}
-                                        </a>
-                                </li>
-                    
-                            )
-                    })} 
-                </ul>
-
-            </nav>
-        )
-    }
+  render() {
+    return (
+      <nav className="NavbarItems">
+        <h1 className="navbar-logo">Logo</h1>
+        <div className="menu-icon"></div>
+        <ul className="nav-menu">
+          {MenuItems.map((item, index) => {
+            return (
+              <li className="nav-links" key={index}>
+                <Link className={item.cName} to={item.url}>{item.title}</Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    );
+  }
 }
 
-export default Navbar
+export default Navbar;

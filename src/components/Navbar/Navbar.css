@@ -1,7 +1,7 @@
 .NavbarItems {
     background: rgb(245, 245, 229);
     border: 1px solid black;
-    height: 60px;
+    height: auto;
     display: flex;
     justify-content: space-around;
     align-content: center;
@@ -24,7 +24,7 @@
     grid-gap: 10px;
     list-style-type: none;
     text-align: center;
-    width: 70vh;
+    width: 100%;
     justify-content: end;
     margin-right: 1rem;
     padding-top: 10px;

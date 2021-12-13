@@ -5,20 +5,12 @@ import './App.css';
 
 
 function App() {
-  const containerClass = "App";
-
   return (
     <div className="App">
-         <Navbar />
-      
-      
-          <Link to="/todo-list">Todo List</Link>|{" "}
-          <Link to="/users">Users</Link>|{" "} 
-          <Link to="/aijposts">Aij Posts</Link>
-    
+      <Navbar />
       <Outlet />
     </div>
-  );
+  )
 }
 
 export default App;
