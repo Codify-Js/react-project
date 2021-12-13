@@ -1,28 +1,13 @@
 import React from 'react';
 import { Link, Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
 import './App.css';
 
 
 function App() {
-  const containerClass = "App";
-
   return (
-    <div className={containerClass}>
-      <header className="App-header">
-        <nav
-          style={{
-            borderBottom: "solid 1px",
-            paddingBottom: "1rem"
-          }}
-        >
-          <Link to="/todo-list">Todo List</Link>|{" "}
-          <Link to="/users">Users</Link>|{" "}
-          <Link to="/mansur-posts">Mansur Posts</Link>|{" "}
-          <Link to="/zamir-posts">Zamir Posts</Link>|{" "}
-          <Link to="/gulzhan-posts">Gulzhan Posts</Link>|{" "}
-          <Link to="/AisuluuUsers">AisuluuUsers</Link>|{" "}
-        </nav>
-      </header>
+    <div className="App">
+      <Navbar />
       <Outlet />
     </div>
   )

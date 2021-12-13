@@ -5,12 +5,14 @@ import TodoContainer from './containers/TodoList/TodoContainer';
 import TodoItemComponent from './containers/TodoList/TodoItemComponent';
 import ZamirPostsContainer from './containers/ZamirPosts/ZamirPosts'
 import UsersContainer from './containers/Users/UsersContainer';
+import AijPostsContainer from './containers/AijPosts/AijPosts';
 import GulzhanPostsContainer from './containers/GulzhanPosts/GulzhanPostsContainer';
 import MansurPostsContainer from './containers/MansurPosts/MansurPosts';
-
-import App from './App';
-import './index.css';
 import AisuluuUsers from './containers/AisuluuUsers/AisuluuUsers'
+import App from './App';
+
+import './index.css';
+
 
 ReactDOM.render(
   <BrowserRouter>
@@ -21,6 +23,7 @@ ReactDOM.render(
         </Route>
         
         <Route path="users" element={<UsersContainer/>} />
+        <Route path="aijposts" element={<AijPostsContainer/>} />
         <Route path="mansur-posts" element={<MansurPostsContainer/>} />
         <Route path="zamir-posts" element={<ZamirPostsContainer/>} />
         <Route path="gulzhan-posts" element={<GulzhanPostsContainer/>} />
