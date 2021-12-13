@@ -1,5 +1,4 @@
 export const todolist = () => {
-
   return [
     {
       id: 1,
@@ -44,4 +43,19 @@ export const todolist = () => {
       date: '31/12/2021'
     }
   ]
+}
+
+export const usersList = () => {
+  const list = [];
+  for (let i = 0; i < 20; i++) {
+    list.push(
+      {
+        id: i + 1,
+        title: `User ${i + 1}`,
+        description: 'Some description',
+        date: '01/01/2021'
+      },
+    )
+  }
+  return list;
 }
