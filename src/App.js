@@ -8,7 +8,6 @@ function App() {
   return (
     <div className={containerClass}>
       <header className="App-header">
-
         <nav
           style={{
             borderBottom: "solid 1px",
@@ -17,7 +16,8 @@ function App() {
         >
           <Link to="/todo-list">Todo List</Link>|{" "}
           <Link to="/users">Users</Link>|{" "}
-          <Link to="/zamir-posts">Zamir Posts</Link>
+          <Link to="/mansur-posts">Mansur Posts</Link>|{" "}
+          <Link to="/zamir-posts">Zamir Posts</Link>|{" "}
         </nav>
       </header>
       <Outlet />

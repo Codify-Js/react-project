@@ -11,6 +11,7 @@ import './TodoContainer.css'
 
 export default class TodoContainer extends React.Component {
   constructor(props) {
+    console.log('CONSTUCTOR');
     super(props);
 
     // default state values
@@ -78,6 +79,7 @@ export default class TodoContainer extends React.Component {
   }
 
   render() {
+    console.log('RENDER');
     const search = this.state.search;
     
     const todoList = this.state.list.filter(item => {
@@ -114,7 +116,7 @@ export default class TodoContainer extends React.Component {
           <div>
             <InputComponent placeholder={'Search'} value={this.state.search} onChange={this.handleSearchChange}/>
           </div>
-          <div style={{marginRight: '40px'}}><Outlet /></div>
+          {/* <div style={{marginRight: '40px'}}><Outlet /></div> */}
         </div>
         <InputComponent placeholder={'Title'} value={this.state.inputValue} onChange={this.handleInputChange}/>
         <Button text="Add" onClick={this.handleAdd}/>
