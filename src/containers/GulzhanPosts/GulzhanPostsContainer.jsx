@@ -1,6 +1,9 @@
 import axios from 'axios';
 import React from 'react';
+import GulzhanContextButton from './gulzhan-context-button';
 const API_URL = 'https://jsonplaceholder.typicode.com';
+import { GulzhanContext, themes } from './gulzhan-context';
+import PostList from './PostList';
 
 
 export default class GulzhanPostsContainer extends React.Component {
@@ -9,10 +12,21 @@ export default class GulzhanPostsContainer extends React.Component {
 
     this.state = {
       list: [],
-      post: null
+      post: null,
+      theme: theme.light
+    };
+
+    this.toggleTheme = () => {
+      this.setState(state => ({
+        theme:
+          state.theme === themes.dark
+            ? themes.light
+            : themes.dark,
+      }));
     };
 
   }
+  
 
   componentDidMount() {
     axios.get(`${API_URL}/posts`)
@@ -43,18 +57,22 @@ handlePostClick(id) {
   render() {
 
     return (
-      <div className="container">
+      <GulzhanContext.Provider value={this.state.theme}className="container">
         <div className="container-header">
           Here is my list of posts
         </div>
         <div>
-          POST: {this.state.post ? this.state.post.title: 'No clicked post'}
+          <GulzhanContextButton className={'button'} onClick={this.toggleTheme}>
+            BUTTON
+          </GulzhanContextButton>
         </div>
         <div>
-          {this.state.list.map(post =>
-            <div onClick={() => this.handlePostClick(post.id)} key={post.id}>{post.id} ) {post.title}</div>)}
+          POST: {this.state.post ? this.state.post.title: 'No clicked post'}
         </div>
-      </div>
+        <hr/>
+        <PostList 
+
+      </GulzhanContext.Provider>
     )
   }
   }
