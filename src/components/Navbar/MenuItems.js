@@ -38,5 +38,10 @@ export const MenuItems = [
         title: 'Aisuluu Users',
         url: '/AisuluuUsers',
         cName: 'nav-links'
+    },
+    {
+        title: 'Tima posts',
+        url: '/tima-posts',
+        cName: 'nav-links'
     }
 ]

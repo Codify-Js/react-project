@@ -9,6 +9,7 @@ import AijPostsContainer from './containers/AijPosts/AijPosts';
 import GulzhanPostsContainer from './containers/GulzhanPosts/GulzhanPostsContainer';
 import MansurPostsContainer from './containers/MansurPosts/MansurPosts';
 import AisuluuUsers from './containers/AisuluuUsers/AisuluuUsers'
+import TimaPostsContainer from './containers/TimaPosts/TimaPosts'
 import App from './App';
 
 import './index.css';
@@ -28,6 +29,7 @@ ReactDOM.render(
         <Route path="zamir-posts" element={<ZamirPostsContainer/>} />
         <Route path="gulzhan-posts" element={<GulzhanPostsContainer/>} />
         <Route path="AisuluuUsers" element={<AisuluuUsers/>} />
+        <Route path="tima-posts" element={<TimaPostsContainer/>} />
 
         <Route path="*" element={<div>NOT FOUND</div>  } />
       </Route>
