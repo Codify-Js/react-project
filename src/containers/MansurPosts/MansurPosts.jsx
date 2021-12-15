@@ -1,5 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import ContextButton from './ContextButton';
+import PostsList from './PostsList';
+import { MansurThemeContext, themes } from './theme-context.js';
 
 const API_URL = 'https://jsonplaceholder.typicode.com';
 
@@ -10,7 +13,17 @@ export default class MansurPostsContainer extends React.Component {
     this.state = {
       list: [],
       post: null,
-      postId: null
+      postId: null,
+      theme: themes.light,
+    };
+
+    this.toggleTheme = () => {
+      this.setState(state => ({
+        theme:
+          state.theme === themes.dark
+            ? themes.light
+            : themes.dark,
+      }));
     };
 
     this.handlePostClick = this.handlePostClick.bind(this);
@@ -47,25 +60,19 @@ export default class MansurPostsContainer extends React.Component {
   }
 
   render() {
-    
     return (
-      <div className="container">
+      <MansurThemeContext.Provider value={this.state.theme} className="container">
         <div className="container-header">
           Hello my name is Mansur
         </div>
+        <div><ContextButton onClick={this.toggleTheme} className={'button'}>Change Theme</ContextButton></div>
         <hr/>
         <div>
           POST: {this.state.post ? this.state.post.title : 'No clicked post'}
         </div>
         <hr/>
-        <div>
-          {this.state.list.map((post, index) => { 
-            return (
-              <div key={index} onClick={() => this.handlePostClick(post.id)}>{post.id} | {post.title}</div>
-            )
-          })}
-        </div>
-      </div>
+        <PostsList list={this.state.list} onChange={this.handlePostClick}/>
+      </MansurThemeContext.Provider>
     )
   }
 }
