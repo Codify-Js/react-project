@@ -29,7 +29,6 @@ export default class AisuluuUsers extends React.Component {
     }
   
     render() {
-      const search = this.state.search;
         return (
             <div className="container">
                <div className="container-header">
