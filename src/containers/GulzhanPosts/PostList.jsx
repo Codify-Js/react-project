@@ -1,17 +1,22 @@
 import React from "react"
 import { GulzhanContext } from "./gulzhan-context"
+import GulzhanContextButton from "./gulzhan-context-button";
 
-class PostList extends React.component {
+class PostList extends React.Component {
     render(){
+        const theme = this.context;
         return (
-            <div>
-            {this.props.list.map(post =>
-              <div onClick={() => this.props.handlePostClick(post.id)} key={post.id}>{post.id} ) {post.title}</div>)}
-          </div>
+            <div style={{backgroundColor: theme.background, color: theme.foreground}}>
+              {this.props.list?.map((post, index) => { 
+                return (
+                  <div key={index} onClick={() => this.props.onChange(post.id)}>{post.id} | {post.title}</div>
+                )
+              })}
+            </div>
         )
     }
 }
 
-PostList.
+PostList.contextType = GulzhanContext;
 
 export default PostList

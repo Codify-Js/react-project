@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React from 'react';
 import GulzhanContextButton from './gulzhan-context-button';
-const API_URL = 'https://jsonplaceholder.typicode.com';
 import { GulzhanContext, themes } from './gulzhan-context';
 import PostList from './PostList';
 
+const API_URL = 'https://jsonplaceholder.typicode.com';
 
 export default class GulzhanPostsContainer extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ export default class GulzhanPostsContainer extends React.Component {
     this.state = {
       list: [],
       post: null,
-      theme: theme.light
+      theme: themes.light
     };
 
     this.toggleTheme = () => {
@@ -70,7 +70,7 @@ handlePostClick(id) {
           POST: {this.state.post ? this.state.post.title: 'No clicked post'}
         </div>
         <hr/>
-        <PostList 
+        <PostList list={this.state.list} onChange={this.handlePostClick}/>
 
       </GulzhanContext.Provider>
     )
