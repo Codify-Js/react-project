@@ -1,5 +1,6 @@
 import React from 'react';
 import {MansurThemeContext} from './theme-context.js';
+import {Button} from 'react-bootstrap'
 
 class ContextButton extends React.Component {
   render() {
@@ -7,8 +8,9 @@ class ContextButton extends React.Component {
     let theme = this.context;
 
     return (
-      <button
+      <Button
         {...props}
+        variant="primary"
         style={{backgroundColor: theme.background, color: theme.foreground}}
       />
     );

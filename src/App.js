@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import './App.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

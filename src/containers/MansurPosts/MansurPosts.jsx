@@ -3,6 +3,7 @@ import axios from 'axios';
 import ContextButton from './ContextButton';
 import PostsList from './PostsList';
 import { MansurThemeContext, themes } from './theme-context.js';
+import './index.scss'
 
 const API_URL = 'https://jsonplaceholder.typicode.com';
 
@@ -61,17 +62,19 @@ export default class MansurPostsContainer extends React.Component {
 
   render() {
     return (
-      <MansurThemeContext.Provider value={this.state.theme} className="container">
-        <div className="container-header">
-          Hello my name is Mansur
+      <MansurThemeContext.Provider value={this.state.theme}>
+        <div className="wrapper">
+          <div className="header">
+            Hello my name is Mansur
+          </div>
+          <div><ContextButton onClick={this.toggleTheme} className={'button'}>Change Theme</ContextButton></div>
+          <hr/>
+          <div className="post">
+            POST: {this.state.post ? this.state.post.title : 'No clicked post'}
+          </div>
+          <hr/>
+          <PostsList list={this.state.list} onChange={this.handlePostClick}/>
         </div>
-        <div><ContextButton onClick={this.toggleTheme} className={'button'}>Change Theme</ContextButton></div>
-        <hr/>
-        <div>
-          POST: {this.state.post ? this.state.post.title : 'No clicked post'}
-        </div>
-        <hr/>
-        <PostsList list={this.state.list} onChange={this.handlePostClick}/>
       </MansurThemeContext.Provider>
     )
   }
