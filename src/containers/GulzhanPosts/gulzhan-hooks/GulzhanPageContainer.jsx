@@ -13,7 +13,9 @@ export class GulzhanPageContainer extends React.Component {
     render(){
     return (
         <div className='gulzhan-container'>
-            <div></div>
+            <div>
+                
+            </div>
         </div>
     )
 }
