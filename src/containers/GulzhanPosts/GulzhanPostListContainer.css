@@ -1,0 +1,28 @@
+h1{
+    color: gray;
+    text-align: center;
+}
+
+.postList-container{
+    padding: 50px;
+}
+
+.searchInputArea{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.clickedPostDisplay, .displayClickCounter {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.postList-columnTitles{
+    background-color: gray;
+}
+
+.column{
+    padding: 10px;
+}
