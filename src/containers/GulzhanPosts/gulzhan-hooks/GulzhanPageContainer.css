@@ -1,6 +1,20 @@
-.gulzhan-container{
+.gulzhan-page-container{
     margin: 0 auto;
-    border: 1px solid red;
-    width: 50px;
-    height: 100%;
+    width: 1200px;
+    height: 2000px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.gulzhan-page-header{
+    text-align: center;
+    padding: 50px 0;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: violet;
+}
+
+.gulzhan-gallery-container{
+    width: 800px;
+    height: 500px;
+    border: 1px solid green;
 }

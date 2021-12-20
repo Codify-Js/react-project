@@ -34,6 +34,7 @@ export const MenuItems = [
         url: '/gulzhan-posts',
         cName: 'nav-links'
     },
+
     {
         title: 'Aisuluu Users',
         url: '/AisuluuUsers',

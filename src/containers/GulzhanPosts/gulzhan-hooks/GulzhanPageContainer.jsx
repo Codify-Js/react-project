@@ -1,4 +1,5 @@
 import React from 'react'
+import GulzhanGallery from './GulzhanGallery'
 import './GulzhanPageContainer.css'
 
 export class GulzhanPageContainer extends React.Component {
@@ -12,9 +13,12 @@ export class GulzhanPageContainer extends React.Component {
     
     render(){
     return (
-        <div className='gulzhan-container'>
+        <div className='gulzhan-page-container'>
+            <div className='gulzhan-page-header'>
+            <span>Gallery</span>
+            </div>
             <div>
-                
+            {GulzhanGallery}
             </div>
         </div>
     )
