@@ -39,5 +39,6 @@ export const MenuItems = [
         title: 'Aisuluu Users',
         url: '/AisuluuUsers',
         cName: 'nav-links'
-    }
+    },
+    
 ]
