@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import Button from '../../components/Button/Button';
 import InputComponent from '../../components/Input/InputComponent';
