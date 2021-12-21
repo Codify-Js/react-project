@@ -109,24 +109,22 @@ const UsersContainer = () => {
       <Container>
         <div className="filter">
           <Row>
-            <Col>
+            <Col sm={4}>
              <InputComponent placeholder='search' value={search} onChange={handleInput} />
             </Col>
-            <Col>
+            <Col sm={4}>
             <CheckBoxComponent
               label={'Filter A'} 
               checked={filter.a} 
               handleCheck={() => setFilter({...filter, a: !filter.a})}
               />
             </Col>
-            <Col><CheckBoxComponent 
+            <Col sm={4}>
+            <CheckBoxComponent 
             label={'Filter B'}
              checked={filter.b} 
              handleCheck={() => setFilter({...filter, b: !filter.b})}/>
              </Col>
-            <Col>
-            
-            </Col>
           </Row>
         </div>
         {loading && <div style={spinnerStyles}><Spinner animation="border"/></div>}
