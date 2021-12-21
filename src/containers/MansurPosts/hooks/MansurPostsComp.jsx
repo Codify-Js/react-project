@@ -35,7 +35,6 @@ const MansurPostsComp = () => {
 
   const buttonText = showButton ? 'Hide Body' : 'Show Body'
 
-  console.log('Render');
   return (
     <div className="post-container">
       <div className="post-container_header">
@@ -47,11 +46,11 @@ const MansurPostsComp = () => {
 
       <Button onClick={handleShowBodyBtn}>{buttonText}</Button>
 
-      {showButton && (
-        <div className="post-container_body">
-           <PostsList list={posts} onChange={handlePostClick}/>
-        </div>
-      )}
+      
+      <div className="post-container_body">
+          <PostsList list={posts} onChange={handlePostClick}/>
+      </div>
+    
     </div>
     
   )
