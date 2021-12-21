@@ -45,12 +45,10 @@ const MansurPostsComp = () => {
       </div>
 
       <Button onClick={handleShowBodyBtn}>{buttonText}</Button>
-
-      
+     
       <div className="post-container_body">
-          <PostsList list={posts} onChange={handlePostClick}/>
+        <PostsList list={posts} onChange={handlePostClick}/>
       </div>
-    
     </div>
     
   )

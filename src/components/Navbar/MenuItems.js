@@ -30,10 +30,11 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
-        title: 'Gulzhan Posts',
+        title: "Gulzhan's Page",
         url: '/gulzhan-posts',
         cName: 'nav-links'
     },
+
     {
         title: 'Aisuluu Users',
         url: '/AisuluuUsers',
