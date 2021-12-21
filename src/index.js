@@ -9,9 +9,10 @@ import AijPostsContainer from './containers/AijPosts/AijPosts';
 import MansurPostsContainer from './containers/MansurPosts/MansurPosts';
 import AisuluuUsers from './containers/AisuluuUsers/AisuluuUsers'
 
+import EllePostsComp from './containers/AijPosts/hooks/EllePostsComp'
+
 import GulzhanPostListContainer from './containers/GulzhanPosts/GulzhanPostListContainer'
 // import MansurPostsComp from './containers/MansurPosts/hooks/MansurPostsComp';
-
 
 import App from './App';
 
@@ -26,6 +27,7 @@ ReactDOM.render(
         </Route>
 
         <Route path="users" element={<UsersContainer/>} />
+        <Route path="elle" element={<EllePostsComp/>}/>
         <Route path="aijposts" element={<AijPostsContainer/>} />
         <Route path="mansur-posts" element={<MansurPostsContainer/>} />
         <Route path="zamir-posts" element={<ZamirPostsContainer/>} />
