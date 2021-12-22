@@ -8,7 +8,6 @@ class PostsList extends React.Component {
     const theme = this.context;
     return (
       <Container style={{backgroundColor: theme.background, color: theme.foreground}} >
-        <ContextButton>Another Button</ContextButton>
         {this.props.list?.map((post, index) => { 
           return (
             <Row key={index} onClick={() => this.props.onChange(post.id)}>
@@ -22,6 +21,6 @@ class PostsList extends React.Component {
   }
 }
 
-PostsList.contextType = MansurThemeContext;
+// PostsList.contextType = MansurThemeContext;
 
 export default PostsList

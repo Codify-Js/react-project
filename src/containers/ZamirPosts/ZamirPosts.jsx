@@ -20,7 +20,7 @@ export default class ZamirPostsContainer extends React.Component {
     }
 
     componentWillUnmount() {
-        alert('Posts Container was unmounted')
+        // alert('Posts Container was unmounted')
     }
     // handleClick ()
 
