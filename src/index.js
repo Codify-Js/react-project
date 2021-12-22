@@ -9,6 +9,7 @@ import MansurPostsContainer from './containers/MansurPosts/MansurPosts';
 import AisuluuUsers from './containers/AisuluuUsers/AisuluuUsers'
 import MansurPostsComp from './containers/MansurPosts/hooks/MansurPostsComp';
 import GulzhanPostListContainer from './containers/GulzhanPosts/GulzhanPostListContainer'
+import GulzhanUsers from './containers/Users/GulzhanUsers'
 
 import App from './App';
 
@@ -31,6 +32,7 @@ ReactDOM.render(
         <Route path="zamir-posts" element={<ZamirPostsContainer/>} />
         <Route path="gulzhan-posts" element={<GulzhanPostListContainer/>} />
         <Route path="AisuluuUsers" element={<AisuluuUsers/>} />
+        <Route path="GulzhanUsers" element={<GulzhanUsers/>} />
 
         <Route path="*" element={<div>NOT FOUND</div>  } />
       </Route>
