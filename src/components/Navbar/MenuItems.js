@@ -15,8 +15,8 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
-        title: 'Mansur posts',
-        url: '/mansur-posts',
+        title: 'Tima posts',
+        url: '/tima-posts',
         cName: 'nav-links'
     },
     {
@@ -37,6 +37,11 @@ export const MenuItems = [
     {
         title: 'Aisuluu Users',
         url: '/AisuluuUsers',
+        cName: 'nav-links'
+    },
+    {
+        title: 'Tima User',
+        url: '/TimaUser',
         cName: 'nav-links'
     }
 ]

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MansurThemeContext } from './theme-context.js';
+import { TimaThemeContext } from './theme-context.js';
 import ContextButton from './ContextButton';
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -22,6 +22,6 @@ class PostsList extends React.Component {
   }
 }
 
-PostsList.contextType = MansurThemeContext;
+PostsList.contextType = TimaThemeContext;
 
 export default PostsList

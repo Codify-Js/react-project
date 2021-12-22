@@ -1,10 +1,10 @@
 import  React,{ useState,useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import axios from 'axios'   
-import PostsList from '../../MansurPosts/PostsList';
+import PostsList from '../PostsList';
 const API_URL = 'https://jsonplaceholder.typicode.com';
 
-const MansurPostsComp = () => {
+const TimaPostsComp = () => {
   const [showButton,setShowButton] = useState(false)
   const [counter,setCounter] = useState(0)
   const [posts,setPosts] = useState([])
@@ -44,4 +44,4 @@ const MansurPostsComp = () => {
     )
 }
 
-export default MansurPostsComp
+export default TimaPostsComp

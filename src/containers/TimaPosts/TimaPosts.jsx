@@ -2,12 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import ContextButton from './ContextButton';
 import PostsList from './PostsList';
-import { MansurThemeContext, themes } from './theme-context.js';
+import { TimaThemeContext, themes } from './theme-context.js';
 import './index.scss'
 
 const API_URL = 'https://jsonplaceholder.typicode.com';
 
-export default class MansurPostsContainer extends React.Component {
+export default class TimaPostsContainer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -62,10 +62,10 @@ export default class MansurPostsContainer extends React.Component {
 
   render() {
     return (
-      <MansurThemeContext.Provider value={this.state.theme}>
+      <TimaThemeContext.Provider value={this.state.theme}>
         <div className="wrapper">
           <div className="header">
-            Hello my name is Mansur
+            Hello my name is Tima
           </div>
           <div><ContextButton onClick={this.toggleTheme} className={'button'}>Change Theme</ContextButton></div>
           <hr/>
@@ -75,7 +75,7 @@ export default class MansurPostsContainer extends React.Component {
           <hr/>
           <PostsList list={this.state.list} onChange={this.handlePostClick}/>
         </div>
-      </MansurThemeContext.Provider>
+      </TimaThemeContext.Provider>
     )
   }
 }

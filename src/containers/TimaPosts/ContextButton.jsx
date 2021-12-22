@@ -1,5 +1,5 @@
 import React from 'react';
-import {MansurThemeContext} from './theme-context.js';
+import {TimaThemeContext} from './theme-context.js';
 import {Button} from 'react-bootstrap'
 
 class ContextButton extends React.Component {
@@ -17,6 +17,6 @@ class ContextButton extends React.Component {
   }
 }
 
-ContextButton.contextType = MansurThemeContext;
+ContextButton.contextType = TimaThemeContext;
 
 export default ContextButton;

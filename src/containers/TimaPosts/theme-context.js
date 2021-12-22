@@ -11,6 +11,6 @@ export const themes = {
   },
 };
 
-export const MansurThemeContext = React.createContext(
+export const TimaThemeContext = React.createContext(
   themes.dark
 );
