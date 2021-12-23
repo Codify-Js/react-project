@@ -10,10 +10,10 @@ import MansurPostsContainer from './containers/MansurPosts/MansurPosts';
 import AisuluuUsers from './containers/AisuluuUsers/AisuluuUsers'
 import AisuluuPostsComp from './containers/AisuluuUsers/hooks/AisuluuPostsContainer'
 import MansurPostsComp from './containers/MansurPosts/hooks/MansurPostsComp';
-import AisuluusContainer from './containers/Users/AisuluusContainer';
 import App from './App';
 import './index.css';
 import UsersContainer from './containers/Users/UsersContainer';
+import AisuluusContainer from './containers/AisuluuUsers/AisuluusContainer';
 
 
 
