@@ -20,6 +20,11 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
+        title: 'Mansur posts',
+        url: '/mansur-posts',
+        cName: 'nav-links'
+    },
+    {
         title: 'Aij Posts',
         url: '/aijposts',
         cName: 'nav-links'

@@ -8,8 +8,10 @@ import ZamirPostsContainer from './containers/ZamirPosts/ZamirPosts'
 import AijPostsContainer from './containers/AijPosts/AijPosts';
 import GulzhanPostsContainer from './containers/GulzhanPosts/GulzhanPostsContainer';
 import TimaPostsContainer from './containers/TimaPosts/TimaPosts';
+import MansurPostsContainer from './containers/MansurPosts/MansurPosts';
 import AisuluuUsers from './containers/AisuluuUsers/AisuluuUsers'
 import TimaPostsComp from './containers/TimaPosts/hooks/TimaPostsComp';
+import MansurPostsComp from './containers/MansurPosts/hooks/MansurPostsComp';
 import TimaUser from './containers/TimaUser/TimaUser.jsx'
 import App from './App';
 
@@ -25,8 +27,10 @@ ReactDOM.render(
         </Route>
         
         <Route path="users" element={<TimaPostsComp/>} />
+        <Route path="users" element={<MansurPostsComp/>} />
         <Route path="aijposts" element={<AijPostsContainer/>} />
         <Route path="tima-posts" element={<TimaPostsContainer/>} />
+        <Route path="mansur-posts" element={<MansurPostsContainer/>} />
         <Route path="zamir-posts" element={<ZamirPostsContainer/>} />
         <Route path="gulzhan-posts" element={<GulzhanPostsContainer/>} />
         <Route path="AisuluuUsers" element={<AisuluuUsers/>} />
