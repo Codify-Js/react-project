@@ -61,15 +61,15 @@ const filteredUsers = users.filter(user=>user.name.toLowerCase().includes(search
               <Col sm = {3}>Address</Col>
               <Col sm = {3}>Company name</Col>
             </Row>
-        {users.map(user=>{
-            <Row key={user.id}>
+           {filteredUsers.map(user => (
+            <Row key={user.id} onClick={() => handleUserClick(user)}>
               <Col sm = {3}>{user.name}</Col>
               <Col sm = {3}>{user.email}</Col>
               <Col sm = {3}>{user.address.street}</Col>
               <Col sm = {3}>{user.company.name}</Col>
             </Row>
-          })
-        }
+            ))}
+
       </>}
       </Container>
     </>
