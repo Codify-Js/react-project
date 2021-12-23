@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 const API_URL= 'https://jsonplaceholder.typicode.com'
+
 export default class AisuluuUsers extends React.Component {
     constructor(props) {
       super(props);

@@ -38,5 +38,10 @@ export const MenuItems = [
         title: 'Aisuluu Users',
         url: '/AisuluuUsers',
         cName: 'nav-links'
+    },
+    {
+        title: 'Users-list',
+        url: '/Users-list',
+        cName: 'nav-links'
     }
 ]
