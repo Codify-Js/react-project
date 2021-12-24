@@ -46,6 +46,11 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
+        title: 'Users-list',
+        url: '/Users-list',
+        cName: 'nav-links'
+    },
+    {
         title: 'Tima User',
         url: '/TimaUser',
         cName: 'nav-links'

@@ -9,4 +9,5 @@ const CheckBoxComponent = ({label, checked, handleCheck}) => {
   )
 }
 
+
 export default CheckBoxComponent

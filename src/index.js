@@ -32,7 +32,8 @@ import ZamirPostsContainer from './containers/ZamirPosts/ZamirPosts'
 
 // Aisuluu components
 import AisuluuUsers from './containers/AisuluuUsers/AisuluuUsers'
-
+import AisuluusContainer from './containers/AisuluuUsers/AisuluusContainer';
+import AisuluuPostsComp from './containers/AisuluuUsers/hooks/AisuluuPostsContainer'
 
 //Eliza components
 import EllePostsComp from './containers/AijPosts/hooks/EllePostsComp'
@@ -48,14 +49,23 @@ ReactDOM.render(
           <Route path=":itemId" element={<TodoItemComponent />} />
         </Route>
         <Route path="users" element={<UsersContainer/>} />
-        <Route path="elle" element={<EllePostsComp/>}/>
-        <Route path="aijposts" element={<AijPostsContainer/>} />
-        <Route path="tima-posts" element={<TimaPostsContainer/>} />
         <Route path="mansur-posts" element={<MansurPostsContainer/>} />
-        <Route path="zamir-posts" element={<ZamirPostsContainer/>} />
-        <Route path="gulzhan-posts" element={<GulzhanPostListContainer/>} />
-        <Route path="AisuluuUsers" element={<AisuluuUsers/>} />
+          
+        <Route path="elle" element={<EllePostsComp/>}/>
+          
+        <Route path="aijposts" element={<AijPostsContainer/>} />
+          
+        <Route path="tima-posts" element={<TimaPostsContainer/>} />
         <Route path="TimaUser" element={<TimaUser/>} />
+          
+        <Route path="zamir-posts" element={<ZamirPostsContainer/>} />
+          
+        <Route path="gulzhan-posts" element={<GulzhanPostListContainer/>} />
+          
+        <Route path="AisuluuUsers" element={<AisuluuUsers/>} />
+        <Route path="Users-list" element={<AisuluusContainer/>} />
+
+
 
         <Route path="*" element={<div>NOT FOUND</div>  } />
       </Route>
