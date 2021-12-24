@@ -8,11 +8,12 @@ class ContextButton extends React.Component {
     let theme = this.context;
 
     return (
-      <Button
-        {...props}
-        variant="primary"
-        style={{backgroundColor: theme.background, color: theme.foreground}}
-      />
+      <div></div>
+      // <Button
+      //   {...props}
+      //   variant="primary"
+      //   style={{backgroundColor: theme.background, color: theme.foreground}}
+      // />
     );
   }
 }

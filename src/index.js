@@ -1,22 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import App from './App';
 import TodoContainer from './containers/TodoList/TodoContainer';
 import TodoItemComponent from './containers/TodoList/TodoItemComponent';
-import ZamirPostsContainer from './containers/ZamirPosts/ZamirPosts'
-// import UsersContainer from './containers/Users/UsersContainer';
-import AijPostsContainer from './containers/AijPosts/AijPosts';
-import GulzhanPostsContainer from './containers/GulzhanPosts/GulzhanPostsContainer';
-import TimaPostsContainer from './containers/TimaPosts/TimaPosts';
+import UsersContainer from './containers/Users/UsersContainer';
+
+// Mansur components
 import MansurPostsContainer from './containers/MansurPosts/MansurPosts';
-import AisuluuUsers from './containers/AisuluuUsers/AisuluuUsers'
-import TimaPostsComp from './containers/TimaPosts/hooks/TimaPostsComp';
 import MansurPostsComp from './containers/MansurPosts/hooks/MansurPostsComp';
+
+
+//Tima components
+import TimaPostsContainer from './containers/TimaPosts/TimaPosts';
+import TimaPostsComp from './containers/TimaPosts/hooks/TimaPostsComp';
 import TimaUser from './containers/TimaUser/TimaUser.jsx'
-import App from './App';
+
+//Gulzhan components
+import GulzhanPostListContainer from './containers/GulzhanPosts/GulzhanPostListContainer'
+import GulzhanPostsContainer from './containers/GulzhanPosts/GulzhanPostsContainer';
+
+
+// Aijan components
+import AijPostsContainer from './containers/AijPosts/AijPosts';
+
+
+// Zamir components
+import ZamirPostsContainer from './containers/ZamirPosts/ZamirPosts'
+
+
+// Aisuluu components
+import AisuluuUsers from './containers/AisuluuUsers/AisuluuUsers'
+
+
+//Eliza components
+import EllePostsComp from './containers/AijPosts/hooks/EllePostsComp'
+
 
 import './index.css';
-
 
 ReactDOM.render(
   <BrowserRouter>
@@ -25,14 +47,13 @@ ReactDOM.render(
         <Route path="todo-list" element={<TodoContainer />} >
           <Route path=":itemId" element={<TodoItemComponent />} />
         </Route>
-        
-        <Route path="users" element={<TimaPostsComp/>} />
-        <Route path="users" element={<MansurPostsComp/>} />
+        <Route path="users" element={<UsersContainer/>} />
+        <Route path="elle" element={<EllePostsComp/>}/>
         <Route path="aijposts" element={<AijPostsContainer/>} />
         <Route path="tima-posts" element={<TimaPostsContainer/>} />
         <Route path="mansur-posts" element={<MansurPostsContainer/>} />
         <Route path="zamir-posts" element={<ZamirPostsContainer/>} />
-        <Route path="gulzhan-posts" element={<GulzhanPostsContainer/>} />
+        <Route path="gulzhan-posts" element={<GulzhanPostListContainer/>} />
         <Route path="AisuluuUsers" element={<AisuluuUsers/>} />
         <Route path="TimaUser" element={<TimaUser/>} />
 

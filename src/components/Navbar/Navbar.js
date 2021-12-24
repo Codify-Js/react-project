@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import { MenuItems } from "./MenuItems";
+import { Container, Row, Col, Button, Badge} from 'react-bootstrap';
 import "./Navbar.css";
 
 class Navbar extends React.Component {
@@ -12,9 +13,9 @@ class Navbar extends React.Component {
         <ul className="nav-menu">
           {MenuItems.map((item, index) => {
             return (
-              <li className="nav-links" key={index}>
+              <Col sm={2} className="nav-links" key={index}>
                 <Link className={item.cName} to={item.url}>{item.title}</Link>
-              </li>
+              </Col>
             );
           })}
         </ul>
