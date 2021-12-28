@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo, useRef } from 'react'
 import axios from 'axios'
 import { JSON_PLACEHOLDER_API_URL } from '../../constants/api'
 import { Container, Row, Col, Spinner, DropdownButton, Dropdown } from 'react-bootstrap'
@@ -42,7 +42,6 @@ const UsersContainer = () => {
   }, [nameSortType])
 
   useEffect(() => {
-    console.log('user', activeUser);
     if (!activeUser) {
       setUserTodos([])
       return;
@@ -83,7 +82,6 @@ const UsersContainer = () => {
   }
 
   const handleUserClick = (user) => {
-    console.log('click');
     setActiveUser(user)
   }
 
@@ -96,12 +94,6 @@ const UsersContainer = () => {
   const filteredUsers = users.filter(user => user.name.toLowerCase().includes(search.toLowerCase()))
 
   const nameSortTypeIcon = nameSortType ?  'DESC' : 'ASC'
-
-  if (activeUser && userTodos.length > 0) {
-    return (
-      <UserTodoListComponent user={activeUser} todoList={userTodos} resetUser={handleResetUser}/>
-    )
-  }
 
   return (
     <>
@@ -128,6 +120,9 @@ const UsersContainer = () => {
           </Row>
         </div>
         {loading && <div style={spinnerStyles}><Spinner animation="border"/></div>}
+
+        <UserTodoListComponent user={activeUser} todoList={userTodos} resetUser={() => null}/>
+
         {!loading && <>
           <Row style={{backgroundColor: 'gray'}}>
             <Col onClick={handleSortName} sm={4}>Name {nameSortType !== null && nameSortTypeIcon}</Col>

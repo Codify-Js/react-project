@@ -1,11 +1,10 @@
-import React, {useState} from 'react'
+import React, {memo, useState} from 'react'
 
 import { Container, Dropdown, DropdownButton } from 'react-bootstrap';
 
 const UserTodoListComponent = (props) => {
   const {user, todoList, resetUser} = props
-  const [filterStatus, setFilterStatus] = useState(null)
-
+  const [filterStatus, setFilterStatus] = useState(null) // null === "ALL"
 
   const handleBack = () => {
     resetUser()
@@ -18,12 +17,12 @@ const UserTodoListComponent = (props) => {
 
   const isAll = filterStatus === null
   const filteredTodos =  isAll ? todoList : todoList.filter(item => item.completed === filterStatus)
-  
+  console.log('todp')
   return (
     <Container>
       <span onClick={handleBack}>back</span>
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
-        <h1> {user.name} todo list: </h1>
+        <h1> {user?.name} todo list: </h1>
         <div>
           <DropdownButton id="dropdown-basic-button" title="Status">
             <Dropdown.Item onClick={() => handleChangeStatus(null)}>All</Dropdown.Item>
@@ -32,7 +31,7 @@ const UserTodoListComponent = (props) => {
           </DropdownButton>
         </div>
       </div>
-      {filteredTodos.map((todo) => (
+      {filteredTodos?.map((todo) => (
         <div style={{display: 'flex', justifyContent: 'space-between'}} key={todo.id}>
           <div>{todo.title}</div>
           <div>{todo.completed ? 'completed' : 'uncompleted'}</div>
@@ -43,4 +42,4 @@ const UserTodoListComponent = (props) => {
   )
 }
 
-export default UserTodoListComponent
+export default React.memo(UserTodoListComponent)

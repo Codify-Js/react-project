@@ -6,6 +6,7 @@ import App from './App';
 import TodoContainer from './containers/TodoList/TodoContainer';
 import TodoItemComponent from './containers/TodoList/TodoItemComponent';
 import UsersContainer from './containers/Users/UsersContainer';
+import UseMemoContainer from './containers/Memo/UseMemoContainer';
 
 // Mansur components
 import MansurPostsContainer from './containers/MansurPosts/MansurPosts';
@@ -19,7 +20,6 @@ import TimaUser from './containers/TimaUser/TimaUser.jsx'
 
 //Gulzhan components
 import GulzhanPostListContainer from './containers/GulzhanPosts/GulzhanPostListContainer'
-import GulzhanPostsContainer from './containers/GulzhanPosts/GulzhanPostsContainer';
 
 
 // Aijan components
@@ -49,6 +49,7 @@ ReactDOM.render(
           <Route path=":itemId" element={<TodoItemComponent />} />
         </Route>
         <Route path="users" element={<UsersContainer/>} />
+        <Route path="memo" element={<UseMemoContainer/>} />
         <Route path="mansur-posts" element={<MansurPostsContainer/>} />
           
         <Route path="elle" element={<EllePostsComp/>}/>
