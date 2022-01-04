@@ -51,6 +51,7 @@ ReactDOM.render(
         <Route path="users" element={<UsersContainer/>} />
         <Route path="memo" element={<UseMemoContainer/>} />
         <Route path="mansur-posts" element={<MansurPostsContainer/>} />
+        <Route path="mansur-posts-hooks" element={<MansurPostsComp/>} />
           
         <Route path="elle" element={<EllePostsComp/>}/>
           

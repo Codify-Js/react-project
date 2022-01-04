@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect,useCallback } from 'react'
 import { Button } from 'react-bootstrap'
 import axios from 'axios'
 import PostsList from '../../MansurPosts/PostsList'
+import {usePostsRequestHook} from '../../../hooks/useRequestHook'
 
 const API_URL = 'https://jsonplaceholder.typicode.com';
 
 const MansurPostsComp = () => {
   const [showButton, setShowButton] = useState(false) // Boolean
   const [counter, setCounter] = useState(0) // Number
-  const [posts, setPosts] = useState([]) // Array
 
-  useEffect(() => {
-    console.log('triggered');
-    axios.get(`${API_URL}/posts`)
-      .then((response) => {
-        setPosts(response.data)
-      })
-  },[])
+  const [posts, setPosts] = usePostsRequestHook()
+
+  console.log('posts', posts);
+
+  const handleClean = () => {
+    setPosts([])
+  }
 
   const handleShowBodyBtn = () => {
       setShowButton(!showButton)
@@ -38,9 +38,10 @@ const MansurPostsComp = () => {
                 Counter:{counter}
             </div>
             <Button onClick={handleShowBodyBtn}>{buttonText}</Button>
-            {showButton && (
-                 <PostsList list={posts} onChange={handlePostClick}/>  
-            )} 
+            <Button onClick={handleClean}>CLEAN POSTS</Button>
+            
+            <PostsList list={posts} onChange={handlePostClick}/>  
+            
         </div>
     )
 }

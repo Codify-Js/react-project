@@ -25,13 +25,19 @@ const MemoComponent = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
     handleRender() {
       alert("getAlert from Child");
+    },
+
+    handleLog() {
+      console.log('imperative handle')
     }
-    
   }));
+
+  const handleFunc = () => {
+    alert('hello')
+  }
   return (
-    <div >
+    <div onClick={() => props.handleClick()}>
       {props.text}
-      
     </div>
   )
 })
