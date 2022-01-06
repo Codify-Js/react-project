@@ -3,7 +3,7 @@ import axios from 'axios'
 import { JSON_PLACEHOLDER_API_URL } from '../../constants/api'
 import { Container, Row, Col, Spinner, DropdownButton, Dropdown } from 'react-bootstrap'
 import InputComponent from '../../components/Input/InputComponent';
-import UserTodoListComponent from './userTodoListComponent'
+import UserTodoListComponent from './UserTodoListComponent'
 import CheckBoxComponent from '../../components/CheckBox/CheckboxComponent';
 
 const UsersContainer = () => {

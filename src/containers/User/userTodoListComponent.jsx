@@ -17,7 +17,7 @@ const UserTodoListComponent = (props) => {
 
   const isAll = filterStatus === null
   const filteredTodos =  isAll ? todoList : todoList.filter(item => item.completed === filterStatus)
-  console.log('todp')
+
   return (
     <Container>
       <span onClick={handleBack}>back</span>
