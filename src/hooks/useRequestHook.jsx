@@ -4,6 +4,7 @@ const API_URL = 'https://jsonplaceholder.typicode.com';
 
 export const usePostsRequestHook = () => {
   const [posts, setPosts] = useState([]);
+  const [counter, setCounter] = useState(0)
 
   const getUsers = useCallback(() => {
         axios.get(`${API_URL}/posts/`)
@@ -16,5 +17,5 @@ export const usePostsRequestHook = () => {
       getUsers()
     }, [])
 
-    return [posts, setPosts]
+    return {posts, setPosts, counter, setCounter, getUsers}
 }

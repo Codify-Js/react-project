@@ -2,22 +2,24 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { JSON_PLACEHOLDER_API_URL } from '../../components/constants/gulzhan-api'
 import { Container, Row, Col, Button, Badge} from 'react-bootstrap';
+import {usePostsRequestHook} from '../../hooks/useRequestHook';
 import InputComponent from '../../components/Input/InputComponent';
 import './GulzhanPostListContainer.css'
 
 const GulzhanPostListContainer = () => {
-  const [posts, setPosts] = useState([])
+  // const [posts, setPosts] = useState([])
   const [search, setSearch] = useState('')
   const [clickedPost, setClickedPost] = useState({})
   const [clickedPostId, setClickedPostId] = useState(0)
   const [counter, setCounter] = useState(0)
+  const {posts, setPosts, getUsers} = usePostsRequestHook()
 
-  useEffect(() => {
-    axios.get(`${JSON_PLACEHOLDER_API_URL}/posts`)
-      .then((response) => {
-        setPosts(response.data)
-      })
-  }, [])
+  // useEffect(() => {
+  //   axios.get(`${JSON_PLACEHOLDER_API_URL}/posts`)
+  //     .then((response) => {
+  //       setPosts(response.data)
+  //     })
+  // }, [])
 
   useEffect(() => {
     axios.get(`${JSON_PLACEHOLDER_API_URL}/posts/${clickedPostId}`)

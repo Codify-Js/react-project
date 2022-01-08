@@ -8,9 +8,7 @@ const API_URL = 'https://jsonplaceholder.typicode.com';
 
 const MansurPostsComp = () => {
   const [showButton, setShowButton] = useState(false) // Boolean
-  const [counter, setCounter] = useState(0) // Number
-
-  const [posts, setPosts] = usePostsRequestHook()
+  const {posts, setPosts, counter, getUsers} = usePostsRequestHook()
 
   console.log('posts', posts);
 
@@ -18,16 +16,19 @@ const MansurPostsComp = () => {
     setPosts([])
   }
 
+  const handleRefetch = () => {
+    getUsers()
+  }
+
   const handleShowBodyBtn = () => {
       setShowButton(!showButton)
-      setCounter(counter + 1)
-      console.log('counter',counter);
+    //   setCounter(counter + 1)
+    //   console.log('counter',counter);
   }
   const handlePostClick = (id) => {
       console.log('postId',id);
   }
   
-  console.log('showButton',showButton)
   const buttonText = showButton ? 'Hide Body' : 'Show body'
     return(
         <div  className="post-container">
@@ -39,6 +40,7 @@ const MansurPostsComp = () => {
             </div>
             <Button onClick={handleShowBodyBtn}>{buttonText}</Button>
             <Button onClick={handleClean}>CLEAN POSTS</Button>
+            <Button onClick={handleRefetch}>REFETCH POSTS</Button>
             
             <PostsList list={posts} onChange={handlePostClick}/>  
             
