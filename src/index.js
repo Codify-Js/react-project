@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 import App from './App';
 import TodoContainer from './containers/TodoList/TodoContainer';
@@ -11,7 +13,7 @@ import UseMemoContainer from './containers/Memo/UseMemoContainer';
 // Mansur components
 import MansurPostsContainer from './containers/MansurPosts/MansurPosts';
 import MansurPostsComp from './containers/MansurPosts/hooks/MansurPostsComp';
-
+import TodoListRedux from './containers/TodoWithRedux/TodoListRedux.jsx';
 
 //Tima components
 import TimaPostsContainer from './containers/TimaPosts/TimaPosts';
@@ -42,6 +44,7 @@ import EllePostsComp from './containers/AijPosts/hooks/EllePostsComp'
 import './index.css';
 
 ReactDOM.render(
+ <Provider store={store}>
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} >
@@ -50,7 +53,7 @@ ReactDOM.render(
         </Route>
         <Route path="users" element={<UsersContainer/>} />
         <Route path="memo" element={<UseMemoContainer/>} />
-        <Route path="mansur-posts" element={<MansurPostsContainer/>} />
+        <Route path="mansur-posts" element={<TodoListRedux/>} />
         <Route path="mansur-posts-hooks" element={<MansurPostsComp/>} />
           
         <Route path="elle" element={<EllePostsComp/>}/>
@@ -67,11 +70,10 @@ ReactDOM.render(
         <Route path="AisuluuUsers" element={<AisuluuUsers/>} />
         <Route path="Users-list" element={<AisuluusContainer/>} />
 
-
-
         <Route path="*" element={<div>NOT FOUND</div>  } />
       </Route>
     </Routes>
-  </BrowserRouter>,
+  </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
