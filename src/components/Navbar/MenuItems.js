@@ -51,6 +51,7 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
+<<<<<<< HEAD
         title: 'Users-list',
         url: '/Users-list',
         cName: 'nav-links'
@@ -60,4 +61,11 @@ export const MenuItems = [
         url: '/TimaUser',
         cName: 'nav-links'
     }
+=======
+        title: 'Gulzhan Users',
+        url: '/GulzhanUsers',
+        cName: 'nav-links'
+    }
+    
+>>>>>>> 856c03a983f901e3f14350be5b0b437cc68b89d1
 ]

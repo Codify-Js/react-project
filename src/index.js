@@ -22,6 +22,11 @@ import TimaUser from './containers/TimaUser/TimaUser.jsx'
 
 //Gulzhan components
 import GulzhanPostListContainer from './containers/GulzhanPosts/GulzhanPostListContainer'
+<<<<<<< HEAD
+=======
+import GulzhanUsers from './containers/Users/GulzhanUsers'
+// import MansurPostsComp from './containers/MansurPosts/hooks/MansurPostsComp';
+>>>>>>> 856c03a983f901e3f14350be5b0b437cc68b89d1
 
 
 // Aijan components
@@ -68,7 +73,11 @@ ReactDOM.render(
         <Route path="gulzhan-posts" element={<GulzhanPostListContainer/>} />
           
         <Route path="AisuluuUsers" element={<AisuluuUsers/>} />
+<<<<<<< HEAD
         <Route path="Users-list" element={<AisuluusContainer/>} />
+=======
+        <Route path="GulzhanUsers" element={<GulzhanUsers/>} />
+>>>>>>> 856c03a983f901e3f14350be5b0b437cc68b89d1
 
         <Route path="*" element={<div>NOT FOUND</div>  } />
       </Route>
