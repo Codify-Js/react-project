@@ -7,7 +7,7 @@ import store from './store/store';
 import App from './App';
 import TodoContainer from './containers/TodoList/TodoContainer';
 import TodoItemComponent from './containers/TodoList/TodoItemComponent';
-import UsersContainer from './containers/User/UsersContainer';
+
 import UseMemoContainer from './containers/Memo/UseMemoContainer';
 
 // Mansur components
@@ -51,7 +51,8 @@ ReactDOM.render(
         <Route path="todo-list" element={<TodoContainer />} >
           <Route path=":itemId" element={<TodoItemComponent />} />
         </Route>
-        <Route path="users" element={<UsersContainer/>} />
+        {/* <Route path="users" element={<UsersContainer/>} /> */}
+        
         <Route path="memo" element={<UseMemoContainer/>} />
         <Route path="mansur-posts" element={<TodoListRedux/>} />
         <Route path="mansur-posts-hooks" element={<MansurPostsComp/>} />
