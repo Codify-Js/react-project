@@ -3,10 +3,10 @@ import * as actions from '../actions/actionTypes';
 const initState = {
   posts: [],
   postLoading: false,
+  createdPosts: []
 }
 
 export default function reducer(state = initState, action) {
-  console.log('action', action);
   switch (action.type) {
     case actions.POST_LIST_REQUEST:
       return { 
@@ -18,6 +18,11 @@ export default function reducer(state = initState, action) {
         ...state,
         posts: action.payload,
         postLoading: false
+      }
+    case actions.POST_CREATE_RESPONSE:
+      return {
+        ...state,
+        createdPosts: [...state.createdPosts, action.payload],
       }
     default:
       return state;

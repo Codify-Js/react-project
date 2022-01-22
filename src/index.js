@@ -40,6 +40,7 @@ import AisuluuPostsComp from './containers/AisuluuUsers/hooks/AisuluuPostsContai
 //Eliza components
 import EllePostsComp from './containers/AijPosts/hooks/EllePostsComp'
 
+import CrudPostsContainer from './containers/PostsCrud/CrudPostsContainer';
 
 import './index.css';
 
@@ -51,7 +52,7 @@ ReactDOM.render(
         <Route path="todo-list" element={<TodoContainer />} >
           <Route path=":itemId" element={<TodoItemComponent />} />
         </Route>
-        {/* <Route path="users" element={<UsersContainer/>} /> */}
+        <Route path="new-posts" element={<CrudPostsContainer/>} />
         
         <Route path="memo" element={<UseMemoContainer/>} />
         <Route path="mansur-posts" element={<TodoListRedux/>} />
