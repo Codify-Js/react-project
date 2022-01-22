@@ -1,34 +1,30 @@
 import React, {useCallback, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import axios from 'axios';
-import { API_URL } from '../../components/constants/api';
-import {setPostList, fetchPostList} from '../../store/actions/actions.js';
-import store from '../../store/store';
+import {getPostsFromApi} from '../../store/actions/actions.js';
+import {postsSelector, postsLoadingSelector} from '../../store/selectors/selectors'
 
 const TodoListRedux = () => {
   const dispatch = useDispatch();
-  const posts = useSelector(state => state.posts);
-  const loading = useSelector(state => state.postLoading);
+  
+  const posts = useSelector((state) => postsSelector(state));
+  const loading = useSelector(postsLoadingSelector);
   
   const getUsers = useCallback(() => {
-    dispatch(fetchPostList());
-
-    axios.get(`${API_URL}/posts/`)
-      .then((response) => {
-        dispatch(setPostList(response.data))
-      })
+    dispatch(getPostsFromApi());
   }, [])
 
   useEffect(() => {
     getUsers()
 
     return () => {
-      dispatch(setPostList([]))
+      // dispatch(setPostList([]))
     }
   }, [])
 
-console.log('posts',posts);
-console.log('loading',loading);
+  console.log('posts',posts);
+  console.log('loading',loading);
+  
+
   return (
     <div>
       <h1>New Todo List</h1>
