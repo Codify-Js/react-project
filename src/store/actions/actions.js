@@ -16,8 +16,8 @@ export const setPostList = posts => ({
   payload: posts
 });
 
-export const getPostsFromApi = () => {
-  return (dispatch, getState) => {
+export const createPost = () => {
+  return (dispatch) => {
     const state = getState()
     console.log('state', state);
 
@@ -26,7 +26,7 @@ export const getPostsFromApi = () => {
     axios.get(`${API_URL}/posts/`)
       .then((response) => {
         console.log('response', response);
-        dispatch(setPostList(response.data))
+        // dispatch(setPostList(response.data))
       })
   };
 };

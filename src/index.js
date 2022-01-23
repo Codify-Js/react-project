@@ -40,6 +40,8 @@ import AisuluuPostsComp from './containers/AisuluuUsers/hooks/AisuluuPostsContai
 //Eliza components
 import EllePostsComp from './containers/AijPosts/hooks/EllePostsComp'
 
+import CrudPostsContainer from './containers/PostsCrud/CrudPostsContainer';
+
 
 import './index.css';
 
@@ -66,7 +68,7 @@ ReactDOM.render(
           
         <Route path="zamir-posts" element={<ZamirPostsContainer/>} />
           
-        <Route path="gulzhan-posts" element={<GulzhanPostListContainer/>} />
+        <Route path="gulzhan-posts" element={<CrudPostsContainer/>} />
           
         <Route path="AisuluuUsers" element={<AisuluuUsers/>} />
         <Route path="Users-list" element={<AisuluusContainer/>} />
