@@ -6,3 +6,7 @@ export function postsSelector(state) {
 export function postsLoadingSelector(state) {
   return state.postLoading || false;
 }
+
+export function createdPostsSelector(state) {
+  return state.createdPosts || [];
+}
