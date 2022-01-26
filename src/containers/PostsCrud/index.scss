@@ -1,0 +1,11 @@
+.post-item {
+  display: flex;
+  &__content {
+   display: flex;
+   align-items: center; 
+  }
+
+  &__actions {
+    margin-left: 20px;
+  }
+}
