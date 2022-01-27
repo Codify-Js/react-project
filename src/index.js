@@ -41,6 +41,7 @@ import AisuluuPostsComp from './containers/AisuluuUsers/hooks/AisuluuPostsContai
 import EllePostsComp from './containers/AijPosts/hooks/EllePostsComp'
 
 import CrudPostsContainer from './containers/PostsCrud/CrudPostsContainer';
+import ExamContainer from './containers/ExamTest/ExamContainer';
 
 import './index.css';
 
@@ -53,6 +54,7 @@ ReactDOM.render(
           <Route path=":itemId" element={<TodoItemComponent />} />
         </Route>
         <Route path="new-posts" element={<CrudPostsContainer/>} />
+        <Route path="new-exam" element={<ExamContainer/>} />
         
         <Route path="memo" element={<UseMemoContainer/>} />
         <Route path="mansur-posts" element={<TodoListRedux/>} />

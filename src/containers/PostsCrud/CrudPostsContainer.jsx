@@ -13,7 +13,6 @@ const CrudPostsContainer = () => {
 
   const posts = useSelector((state) => createdPostsSelector(state));
 
-  console.log('posts', posts);
   const layout = {
     labelCol: {
       span: 4,
