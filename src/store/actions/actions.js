@@ -6,6 +6,8 @@ import {
   POST_LIST_REQUEST,
   POST_LIST_RESPONSE,
   POST_CREATE_RESPONSE,
+  POST_DELETE,
+  POST_UPDATE
 } from './actionTypes';
 
 export const fetchPostList = () => ({
@@ -19,6 +21,16 @@ export const setPostList = posts => ({
 
 export const setCreatePost = post => ({
   type: POST_CREATE_RESPONSE,
+  payload: post
+});
+
+export const removePost = id => ({
+  type: POST_DELETE,
+  postId: id
+})
+
+export const editPost = (post) => ({
+  type: POST_UPDATE,
   payload: post
 });
 
@@ -41,8 +53,29 @@ export const createPost = (payload) => {
   return (dispatch) => {
     axios.post(`${API_URL}/posts`, payload)
       .then((response) => {
-        console.log('response', response.data);
         dispatch(setCreatePost(response.data))
+      })
+  };
+};
+
+export const deletePost = (id) => {
+  return (dispatch) => {
+    axios.delete(`${API_URL}/posts/${id}`)
+      .then((response) => {
+        dispatch(removePost(id))
+      }).catch((e) => {
+
+      })
+  };
+};
+
+export const updatePost = (payload) => {
+  return (dispatch) => {
+    axios.put(`${API_URL}/posts/${payload.id}`, payload)
+      .then((response) => {
+        dispatch(editPost(payload))
+      }).catch((e) => {
+
       })
   };
 };

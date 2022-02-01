@@ -1,0 +1,19 @@
+.step-container {
+  padding: 20px;
+
+  &_header {
+    margin: 20px 0;
+  }
+
+  &_content {
+    margin: 12px 0;
+  }
+
+  &_actions {
+    display: flex;
+    justify-content: center;
+    button {
+      margin-right: 6px;
+    }
+  }
+}
