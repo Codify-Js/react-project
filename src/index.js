@@ -43,6 +43,7 @@ import EllePostsComp from './containers/AijPosts/hooks/EllePostsComp'
 import CrudPostsContainer from './containers/PostsCrud/CrudPostsContainer';
 import ExamContainer from './containers/ExamTest/ExamContainer';
 
+import TestForm from './containers/ExamTest/TestForm';
 import './index.css';
 
 ReactDOM.render(
@@ -54,6 +55,7 @@ ReactDOM.render(
           <Route path=":itemId" element={<TodoItemComponent />} />
         </Route>
         <Route path="new-posts" element={<CrudPostsContainer/>} />
+        <Route path="new-questions" element={<TestForm/>} />
         <Route path="new-exam" element={<ExamContainer/>} />
         
         <Route path="memo" element={<UseMemoContainer/>} />

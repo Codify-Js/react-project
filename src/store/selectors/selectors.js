@@ -10,3 +10,7 @@ export function postsLoadingSelector(state) {
 export function createdPostsSelector(state) {
   return state.createdPosts || [];
 }
+
+export function getQuestions(state) {
+  return state.questions;
+}
