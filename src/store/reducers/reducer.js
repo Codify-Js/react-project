@@ -1,9 +1,79 @@
 import * as actions from '../actions/actionTypes';
 
+const questions = [
+    {
+      id: 1,
+      title: 'В каком году вышел Шрек 1',
+      answers: [
+        {
+          title: '1999',
+          correct: false
+        },
+        {
+          title: '2001',
+          correct: true
+        },
+        {
+          title: '2004',
+          correct: false
+        },
+        {
+          title: '2000',
+          correct: false
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: 'Сколько серий в Наруто',
+      answers: [
+        {
+          title: '500',
+          correct: true
+        },
+        {
+          title: '600',
+          correct: false
+        },
+        {
+          title: '700',
+          correct: false
+        },
+        {
+          title: '800',
+          correct: false
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: 'Самое длинное Аниме',
+      answers: [
+        {
+          title: '7000 серий',
+          correct: true
+        },
+        {
+          title: '10000 серий',
+          correct: false
+        },
+        {
+          title: '100 серий',
+          correct: false
+        },
+        {
+          title: '4000 серий',
+          correct: false
+        }
+      ]
+    }
+  ]
+
 const initState = {
   posts: [],
   postLoading: false,
-  createdPosts: []
+  createdPosts: [],
+  questions: questions,
 }
 
 export default function reducer(state = initState, action) {
