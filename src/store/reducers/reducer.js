@@ -74,6 +74,8 @@ const initState = {
   postLoading: false,
   createdPosts: [],
   questions: questions,
+  users: [],
+  currentUser: null
 }
 
 export default function reducer(state = initState, action) {
@@ -115,6 +117,19 @@ export default function reducer(state = initState, action) {
       return {
         ...state,
         createdPosts: newPosts,
+      }
+
+    case actions.CREATE_USER:
+      const users = [...state.users, action.payload]
+      return {
+        ...state,
+        users
+      }
+
+    case actions.SET_CURRENT_USER:
+      return {
+        ...state,
+        currentUser: action.payload
       }
     default:
       return state;

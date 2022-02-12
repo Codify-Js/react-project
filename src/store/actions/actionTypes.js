@@ -7,3 +7,7 @@ export const POST_CREATE_RESPONSE = 'POST_CREATE_RESPONSE';
 
 export const POST_DELETE = 'POST_DELETE';
 export const POST_UPDATE = 'POST_UPDATE';
+
+export const CREATE_USER = 'CREATE_USER';
+export const GET_USER_TOKEN = 'GET_USER_TOKEN';
+export const SET_CURRENT_USER = 'SET_CURRENT_USER';

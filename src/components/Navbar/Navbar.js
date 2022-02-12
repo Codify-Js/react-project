@@ -1,11 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import {useDispatch} from 'react-redux'
 import { MenuItems } from "./MenuItems";
 import { Container, Row, Col, Button, Badge} from 'react-bootstrap';
 import "./Navbar.css";
+import { setCurrentUser } from '../../store/actions/actions';
 
-class Navbar extends React.Component {
-  render() {
+export default function Navbar() {
+    let navigate = useNavigate();
+    const dispatch = useDispatch();
+
     return (
       <nav className="NavbarItems">
         <h1 className="navbar-logo">Logo</h1>
@@ -19,9 +23,11 @@ class Navbar extends React.Component {
             );
           })}
         </ul>
+        <button onClick={() => {
+          localStorage.setItem('token', null)
+          dispatch(setCurrentUser(undefined))
+          navigate('/login');
+        }}>logout</button>
       </nav>
     );
-  }
 }
-
-export default Navbar;

@@ -1,13 +1,16 @@
 // import * as actions from './actionTypes';
 import axios from 'axios';
 import { API_URL } from '../../components/constants/api';
+import generateToken from '../../helpers/randomString';
 
 import { 
   POST_LIST_REQUEST,
   POST_LIST_RESPONSE,
   POST_CREATE_RESPONSE,
   POST_DELETE,
-  POST_UPDATE
+  POST_UPDATE,
+  CREATE_USER,
+  SET_CURRENT_USER
 } from './actionTypes';
 
 export const fetchPostList = () => ({
@@ -32,6 +35,16 @@ export const removePost = id => ({
 export const editPost = (post) => ({
   type: POST_UPDATE,
   payload: post
+});
+
+export const createUser = (payload) => ({
+  type: CREATE_USER,
+  payload
+});
+
+export const setCurrentUser = (payload) => ({
+  type: SET_CURRENT_USER,
+  payload
 });
 
 export const getPostsFromApi = () => {
@@ -77,5 +90,35 @@ export const updatePost = (payload) => {
       }).catch((e) => {
 
       })
+  };
+};
+
+export const registerUser = (payload) => {
+  return (dispatch) => {
+    const user = {
+      ...payload,
+      token: generateToken()
+    }
+
+    console.log('user', user);
+    //HACK
+    dispatch(createUser(user))
+
+    // axios.post(`${API_URL}/singup`, payload)
+    //   .then((response) => {
+      
+    //   }).catch((e) => {
+
+    //   })
+  };
+};
+
+export const loginUser = (payload) => {
+  return (dispatch, getState) => {
+    const users = getState().users
+    console.log('users', users);
+    const targetUser = users.find(user => user.email === payload.email);
+    console.log('targetUser', targetUser);
+    dispatch(setCurrentUser(targetUser));
   };
 };

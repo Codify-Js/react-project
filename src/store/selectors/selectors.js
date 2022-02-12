@@ -14,3 +14,7 @@ export function createdPostsSelector(state) {
 export function getQuestions(state) {
   return state.questions;
 }
+
+export function getCurrentUser(state) {
+  return state.currentUser;
+}
