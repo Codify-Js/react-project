@@ -1,18 +1,17 @@
-
-import './App.css';
-// import TodoContainer from './containers/FirstStateFullComponent/TodoContainer';
-import StudentsContainer from './containers/FirstStateFullComponent/StudentsContainer';
+import React from "react";
+import Navbar from "./components/Navbar/Navbar";
+import "./App.css";
+import { Outlet } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "antd/dist/antd.css";
 
 function App() {
-  const containerClass = "App";
-
   return (
-    <div className={containerClass}>
-      <header className="App-header">
-        <StudentsContainer parentProps={false} />
-      </header>
+    <div className="App">
+      <Navbar />
+      <Outlet />
     </div>
-  )
+  );
 }
 
 export default App;
