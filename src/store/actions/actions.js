@@ -13,6 +13,8 @@ import {
   SET_CURRENT_USER
 } from './actionTypes';
 
+export const createTestType = 'createTest';
+
 export const fetchPostList = () => ({
   type: POST_LIST_REQUEST
 });
@@ -122,3 +124,9 @@ export const loginUser = (payload) => {
     dispatch(setCurrentUser(targetUser));
   };
 };
+
+export const createTest = (payload) => {
+  return (dispatch) => {
+    dispatch({type: createTestType, payload: payload})
+  }
+}

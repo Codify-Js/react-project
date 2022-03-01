@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'antd/dist/antd.css';
 
 function App() {
+  var deviceID = MediaDeviceInfo.deviceId
+  console.log('deviceID', deviceID);
   return (
     <div className="App">
       <Navbar />

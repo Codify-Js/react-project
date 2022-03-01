@@ -48,6 +48,8 @@ import { useSelector } from "react-redux";
 import { getCurrentUser } from "../store/selectors/selectors";
 
 import {useNavigate} from 'react-router-dom'
+import CreateTestForm from '../containers/ExamTest/CreateTestForm';
+import PaginationContainer from "../containers/Pagination/PaginationContainer";
 
 export default function Routing() {
   const currentUser = useSelector(getCurrentUser);
@@ -56,29 +58,29 @@ export default function Routing() {
   const token = localStorage.getItem('token')
 
   console.log('currentUser', currentUser);
-  useEffect(() => {
-    if (!currentUser) {
-      navigate('/login')
-      localStorage.clear()
-      return
-    };
-    const token = currentUser.token
-    localStorage.setItem('token', currentUser.token)
+  // useEffect(() => {
+  //   if (!currentUser) {
+  //     navigate('/login')
+  //     localStorage.clear()
+  //     return
+  //   };
+  //   const token = currentUser.token
+  //   localStorage.setItem('token', currentUser.token)
 
-    if (token) {
-      navigate('/gulzhan-posts')
-    } else {
-      navigate('/login')
-    }
-  }, [currentUser]);
+  //   if (token) {
+  //     navigate('/gulzhan-posts')
+  //   } else {
+  //     navigate('/login')
+  //   }
+  // }, [currentUser]);
 
-  useEffect(() => {
-    if (token) {
-      navigate('/gulzhan-posts')
-    } else {
-      navigate('/login')
-    }
-  }, [token])
+  // useEffect(() => {
+  //   if (token) {
+  //     navigate('/gulzhan-posts')
+  //   } else {
+  //     navigate('/login')
+  //   }
+  // }, [token])
 
   return (
       <Routes>
@@ -89,9 +91,10 @@ export default function Routing() {
           <Route path="todo-list" element={<TodoContainer />}>
             <Route path=":itemId" element={<TodoItemComponent />} />
           </Route>
+          <Route path="pagination" element={<PaginationContainer />} />
           <Route path="new-posts" element={<CrudPostsContainer />} />
           <Route path="new-questions" element={<TestForm />} />
-          <Route path="new-exam" element={<ExamContainer />} />
+          <Route path="new-exam" element={<CreateTestForm />} />
 
           <Route path="memo" element={<UseMemoContainer />} />
           <Route path="mansur-posts" element={<TodoListRedux />} />

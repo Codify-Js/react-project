@@ -1,4 +1,5 @@
 import * as actions from '../actions/actionTypes';
+import { createTestType } from '../actions/actions';
 
 const questions = [
     {
@@ -75,11 +76,17 @@ const initState = {
   createdPosts: [],
   questions: questions,
   users: [],
-  currentUser: null
+  currentUser: null,
+  tests: []
 }
 
 export default function reducer(state = initState, action) {
   switch (action.type) {
+    case createTestType:
+      return { 
+        ...state, 
+        tests: [...state.tests, action.payload]
+      }
     case actions.POST_LIST_REQUEST:
       return { 
         ...state, 

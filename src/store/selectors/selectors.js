@@ -18,3 +18,7 @@ export function getQuestions(state) {
 export function getCurrentUser(state) {
   return state.currentUser;
 }
+
+export function getTests(state) {
+  return state.tests;
+}
